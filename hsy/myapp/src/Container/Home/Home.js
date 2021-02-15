@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import { Carousel, WingBlank } from 'antd-mobile';
+import { Carousel } from 'antd-mobile';
 import imgURL from './1.jpg';
+import { SearchBar, Button, WhiteSpace, WingBlank } from 'antd-mobile';
+
 
 export default class Home extends Component {
     state = {
@@ -19,9 +21,13 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <WingBlank>
+                {/* <WingBlank> */}
                     <Carousel 
-                    style={{padding: '16px',
+                    style={{
+                        height:'250px',
+                        width:"100%",
+                        padding: '16px',
+                        paddingTop:'30px',
                         background: '#DEF1E5',
                         overflow: 'hidden'}}
                     frameOverflow="visible"
@@ -49,17 +55,20 @@ export default class Home extends Component {
                             src={require('./'+val+'.jpg').default}
                             // src={require('./1.jpg').default}
                             alt=""
-                            style={{ width: '100%', verticalAlign: 'top' }}
+                            style={{height:'200px', width: '100%', verticalAlign: 'top' }}
                             onLoad={() => {
                             // fire window resize event to change height
                             window.dispatchEvent(new Event('resize'));
-                            this.setState({ imgHeight: 'auto' });
+                            this.setState({ imgHeight: '200px' });
                             }}
                         />
                         </a>
                     ))}
                     </Carousel>
-                </WingBlank>
+                    
+                    <SearchBar style={{height:'50px',marginTop:'20px'}} placeholder="Search" maxLength={8} />
+               
+                {/* </WingBlank> */}
             </div>
         )
     }
