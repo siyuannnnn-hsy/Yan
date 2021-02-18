@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Carousel } from 'antd-mobile';
 import imgURL from './1.jpg';
-import { SearchBar, Button, WhiteSpace, WingBlank } from 'antd-mobile';
-
+import { SearchBar, Button, WhiteSpace ,Card} from 'antd-mobile';
 
 export default class Home extends Component {
     state = {
@@ -68,6 +67,25 @@ export default class Home extends Component {
                     ))}
                     </Carousel>
                     
+
+
+
+                <WhiteSpace size="lg" />
+                    <Card>
+                        <Card.Header
+                            title="2021考研英语"
+                            // thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
+                            thumb="https://scpic.chinaz.net/Files/pic/icons128/7877/f1.png"
+                            extra={<span>经验分享</span>}
+                        />
+                        <Card.Body>
+                            <div>考完到现在整整一个月啦，在家闲着也是闲着，所以给大家分享自己的备考经验，
+                                经验不一定每个人都适用，但如果我的经验能够对你有所帮助，那也很好啦。
+                                1.关于择校：我是二战跨考生，一战考的一所985综合院校，只招12人（一战头铁），差两分进复试...</div>
+                        </Card.Body>
+                        <Card.Footer content="考研人123456" extra={<div>2021-3-10</div>} />
+                    </Card>
+                <WhiteSpace size="lg" />
                     
                 {/* </WingBlank> */}
             </div>
