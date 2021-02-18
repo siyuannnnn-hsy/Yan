@@ -22,13 +22,15 @@ export default class Home extends Component {
         return (
             <div>
                 {/* <WingBlank> */}
-                    <Carousel 
+                <SearchBar style={{height:'50px'}} placeholder="Search" maxLength={8} />
+               
+                <Carousel 
                     style={{
                         height:'250px',
                         width:"100%",
                         padding: '16px',
                         paddingTop:'30px',
-                        background: '#DEF1E5',
+                        background: 'rgb(218, 218, 218)',
                         overflow: 'hidden'}}
                     frameOverflow="visible"
                     cellSpacing={10}
@@ -66,8 +68,7 @@ export default class Home extends Component {
                     ))}
                     </Carousel>
                     
-                    <SearchBar style={{height:'50px',marginTop:'20px'}} placeholder="Search" maxLength={8} />
-               
+                    
                 {/* </WingBlank> */}
             </div>
         )
