@@ -7,6 +7,10 @@ import Mine from './Container/Mine/Mine';
 import Study from './Container/Study/Study';
 import { Icon } from 'antd-mobile';
 import './assets/fonts/iconfont.css';
+import Xinxi from './Container/Mine/Xinxi';
+import Fenshu from './Container/Mine/Fenshu';
+import Dingdan from './Container/Mine/Dingdan';
+import Lishi from './Container/Mine/Lishi';
 
 
 function App() {
@@ -19,8 +23,14 @@ function App() {
 
         <section>
           <Route exact path="/" component={Home} exact/>
-          <Route path="/Study" component={Study}/>
-          <Route path="/Mine" component={Mine}/>
+          <Route path="/Study" component={Study} exact/>
+
+          <Route path="/Mine" component={Mine} exact/>
+          <Route path="/Mine/Xinxi" component={Xinxi} exact/>
+          <Route path="/Mine/Fenshu" component={Fenshu} exact/>
+          <Route path="/Mine/Dingdan" component={Dingdan} exact/>
+          <Route path="/Mine/Lishi" component={Lishi} exact/>
+
         </section>
 
         <footer>
