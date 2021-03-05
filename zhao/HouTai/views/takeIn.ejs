@@ -144,17 +144,22 @@
     background-color: #ffffff;
 }
 .clock{
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     width: 600px;
     height: 100px;
     float: left;
     margin-top:180px;
     margin-left: -600px;
 }
-.clock1{
-    height: 100px;
+.clock1 button{
+    height: 80px;
+    width:150px;
+    float: left;
+    margin-right:300px;
 }
-.clock3{
+.clock2 button{
+    height:80px;
+    width:150px;
 
 }
     </style>
@@ -202,10 +207,14 @@
             <button class="BT">登录</button>
         </div>
         <div class="clock2">
-            <button class="BT0">注册</button>
+            <button class="BT0" onclick="regist()">注册</button>
         </div>
     </div>
 </div>
 </body>
-
+<script>
+  function regist() {
+        window.location = "http://localhost:3000/regist";
+    }
+</script>
 </html>
