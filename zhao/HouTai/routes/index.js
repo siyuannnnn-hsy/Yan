@@ -12,4 +12,8 @@ router.get ('/regist',function(req,res){
   res.render('regist',{title:'后台注册界面'})
 })
 
+//精选界面基础界面实现
+router.get('/culling',function(req,res){
+  res.render('culling',{title:'精选界面'})
+})
 module.exports = router;

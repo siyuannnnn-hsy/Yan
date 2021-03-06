@@ -204,7 +204,7 @@
     </div>
     <div class="clock">
         <div class="clock1">
-            <button class="BT">登录</button>
+            <button class="BT" onclick="culling()">登录</button>
         </div>
         <div class="clock2">
             <button class="BT0" onclick="regist()">注册</button>
@@ -215,6 +215,9 @@
 <script>
   function regist() {
         window.location = "http://localhost:3000/regist";
+    }
+    function culling(){
+        window.location ="http://localhost:3000/culling";
     }
 </script>
 </html>
