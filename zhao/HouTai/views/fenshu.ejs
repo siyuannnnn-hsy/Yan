@@ -55,7 +55,7 @@
             margin-top: 2px;
             height: 70px;
             width:300px;
-            background-color: #bebebe;
+            background-color: blueviolet;
             border:1px;
         }
         .dingdan{
@@ -82,28 +82,60 @@
             <div class="logo">
                 <img src="../images/logo.png">
             </div>
-            <div class="jingxuan">
+            <!-- <div class="jingxuan" onclick="jingxuan()">
                 精选
             </div>
-            <div class="tuijian">
-                推荐
-            </div>
-            <div class="zhengzhi">
-                政治
-            </div>
-            <div class="english">
-                英语
-            </div>
-            <div class="zuhanyeke">
-                专业课
-            </div>
-            <div class="study">
+            <div class="study" onclick="study()">
                 学习
             </div>
-            <div class="mine">
+            <div class="mine" onclick="mine()">
+                我的 -->
+            <!-- </div> -->
+            <div class="jingxuan" onclick="culling()">
+                精选
+            </div>
+            <div class="study" onclick="study()">
+                学习
+            </div>
+            <div class="mine" onclick="mine()">
                 我的
+            </div>
+            <div class="xiangxi" onclick="xiangxi()">
+                详细信息
+            </div>
+            <div class="fenshu" onclick="fenshu()">
+                分数统计
+            </div>
+            <div class="dingdan" onclick="dingdan()">
+                我的订单
+            </div>
+            <div class="cengjing" onclick="cengjing()">
+                历史课程
             </div>
         </div>
     </div>
 </body>
+<script>
+    function culling() {
+        window.location = "http://localhost:3000/culling";
+    }
+    function study() {
+        window.location = "http://localhost:3000/study";
+    }
+    function mine() {
+        window.location = "http://localhost:3000/mine";
+    }
+    function xiangxi() {
+        window.location = "http://localhost:3000/xiangxi";
+    }
+    function fenshu() {
+        window.location = "http://localhost:3000/fenshu";
+    }
+    function dingdan() {
+        window.location = "http://localhost:3000/dingdan";
+    }
+    function cengjing() {
+        window.location = "http://localhost:3000/cengjing";
+    }
+</script>
 </html>

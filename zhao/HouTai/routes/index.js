@@ -17,6 +17,11 @@ router.get('/culling',function(req,res){
   res.render('culling',{title:'精选界面'})
 })
 
+// router.get('/jingxuan',function(req,res){
+//   res.render('jingxuan',{title:'精选界面'})
+// })
+
+
 //精选
 // router.get('/denglu',function(req,res){
 //   res.render('denglu',{title:'精选界面'})
@@ -78,8 +83,8 @@ router.get('/mine',function(req,res){
 })
 
 //详细信息
-router.get('/culling',function(req,res){
-  res.render('culling',{title:'精选界面'})
+router.get('/xiangxi',function(req,res){
+  res.render('xiangxi',{title:'详细信息'})
 })
 
 //分数统计
@@ -90,5 +95,10 @@ router.get('/fenshu',function(req,res){
 //我的订单
 router.get('/dingdan',function(req,res){
   res.render('dingdan',{title:'我的订单'})
+})
+
+//历史课程
+router.get('/cengjing',function(req,res){
+  res.render('cengjing',{title:'历史课程'})
 })
 module.exports = router;
