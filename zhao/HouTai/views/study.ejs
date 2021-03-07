@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>精选界面</title>
+    <title>学习</title>
     <style>
         .left{
             height:705px;
@@ -23,38 +23,6 @@
             margin-top:28px;
             height: 90px;
             width:300px;
-            background-color: blueviolet;
-            border:1px;
-        }
-        .tuijian{
-            float: left;
-            margin-top: 2px;
-            height: 70px;
-            width:300px;
-            background-color: #bebebe;
-            border:1px;
-        }
-        .zhengzhi{
-            float: left;
-            margin-top: 2px;
-            height: 70px;
-            width:300px;
-            background-color: #bebebe;
-            border:1px;
-        }
-        .english{
-            float: left;
-            margin-top: 2px;
-            height: 70px;
-            width:300px;
-            background-color: #bebebe;
-            border:1px;
-        }
-        .zuhanyeke{
-            float: left;
-            margin-top: 2px;
-            height: 70px;
-            width:300px;
             background-color: #bebebe;
             border:1px;
         }
@@ -62,6 +30,46 @@
             float: left;
             margin-top: 2px;
             height: 90px;
+            width:300px;
+            background-color: blueviolet;
+            border:1px;
+        }
+        .renwu{
+            float: left;
+            margin-top: 2px;
+            height: 60px;
+            width:300px;
+            background-color: #bebebe;
+            border:1px;
+        }
+        .danci{
+            float: left;
+            margin-top: 2px;
+            height: 60px;
+            width:300px;
+            background-color: #bebebe;
+            border:1px;
+        }
+        .tiku{
+            float: left;
+            margin-top: 2px;
+            height: 60px;
+            width:300px;
+            background-color: #bebebe;
+            border:1px;
+        }
+        .qikan{
+            float: left;
+            margin-top: 2px;
+            height: 60px;
+            width:300px;
+            background-color: #bebebe;
+            border:1px;
+        }
+        .kecheng{
+            float: left;
+            margin-top: 2px;
+            height: 60px;
             width:300px;
             background-color: #bebebe;
             border:1px;
@@ -85,20 +93,23 @@
             <div class="jingxuan" onclick="jingxuan()">
                 精选
             </div>
-            <div class="tuijian" onclick="tuijian()">
-                推荐
-            </div>
-            <div class="zhengzhi" onclick="zhengzhi()">
-                政治
-            </div>
-            <div class="english" onclick="english()">
-                英语
-            </div>
-            <div class="zuhanyeke" onclick="zhuanyeke()">
-                专业课
-            </div>
             <div class="study" onclick="study()">
                 学习
+            </div>
+            <div class="renwu" onclick="renwu()">
+                任务
+            </div>
+            <div class="danci" onclick="danci()">
+                单词
+            </div>
+            <div class="tiku" onclick="tiku()">
+                题库
+            </div>
+            <div class="qikan" onclick="qikan()">
+                期刊
+            </div>
+            <div class="kecheng" onclick="kecheng()">
+                在线课程
             </div>
             <div class="mine" onclick="mine()">
                 我的
@@ -110,20 +121,23 @@
     function jingxuan() {
         window.location = "http://localhost:3000/jingxuan";
     }
-    function tuijian() {
-        window.location = "http://localhost:3000/tuijian";
-    }
-    function zhengzhi() {
-        window.location = "http://localhost:3000/zhengzhi";
-    }
-    function english() {
-        window.location = "http://localhost:3000/english";
-    }
-    function zhuanyeke() {
-        window.location = "http://localhost:3000/zhuanyeke";
-    }
     function study() {
         window.location = "http://localhost:3000/study";
+    }
+    function renwu() {
+        window.location = "http://localhost:3000/renwu";
+    }
+    function danci() {
+        window.location = "http://localhost:3000/danci";
+    }
+    function tiku() {
+        window.location = "http://localhost:3000/tiku";
+    }
+    function qikan() {
+        window.location = "http://localhost:3000/qikan";
+    }
+    function kecheng() {
+        window.location = "http://localhost:3000/kecheng";
     }
     function mine() {
         window.location = "http://localhost:3000/mine";
