@@ -101,4 +101,14 @@ router.get('/dingdan',function(req,res){
 router.get('/cengjing',function(req,res){
   res.render('cengjing',{title:'历史课程'})
 })
+
+//管理员信息
+router.get('/managerM',function(req,res){
+  res.render('managerM',{title:'管理员信息'})
+})
+
+//用户信息
+router.get('/userM',function(req,res){
+  res.render('userM',{title:'用户信息'})
+})
 module.exports = router;
