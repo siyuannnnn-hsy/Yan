@@ -94,7 +94,7 @@
             padding-top:10px;
             margin-top:10px;
         }
-        .table{
+        .table0{
             margin-top:35px;
             margin-left: 250px;
         }
@@ -106,6 +106,31 @@
         .serch0{
             margin-left: 20px;
         }
+        table {
+            border-collapse: collapse;
+            width: 885px;
+            margin-left: 400px;
+            /* margin-top:150px; */
+            text-align: center;
+            display: block;
+            margin-top: 100px;
+        }
+        table td, table th {
+            border: 1px solid #cad9ea;
+            color: #666;
+            height: 45px;
+        }
+        table thead th {
+            background-color: #CCE8EB;
+            width: 300px;
+        }
+        table tr:nth-child(odd) {
+            background: #fff;
+        }
+        table tr:nth-child(even) {
+            background: #F5FAFA;
+        }
+
     </style>
 </head>
 <body>
@@ -141,12 +166,27 @@
         </div>
         <div class="right">
             <p>关于推荐内容的表格</p>
-            <div class="table">
+            <div class="table0">
                 <input type="text" class="serch">
                 <button class="serch0">
                     查询
                 </button>
             </div>
+            <table  class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            名称
+                        </th>
+                        <th>
+                            表格名称    
+                        </th>
+                        <th>
+                            对表格的操作
+                        </th>
+                    </tr>
+                </thead>
+            </table>
         </div>
     </div>
 </body>
