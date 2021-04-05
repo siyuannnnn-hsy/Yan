@@ -101,7 +101,7 @@
 
         .code{
             background-color: #bebebe;
-            width:700px;
+            width:1000px;
             height:50px;
             float: left;
             margin-top:60px;
@@ -153,6 +153,31 @@
             margin-left: 300px;
             float: left;
         }
+			#vcode{
+				height:50px;
+				width:40%;
+				font-size:15pt;
+				border-radius:5px;
+				border:1;	
+                margin-left: 80px;
+				padding-left:8px;
+			}
+			#code{
+				color:black;/*字体颜色白色*/
+				background-color:gray;	
+				font-size:5pt;
+				font-family:"华康娃娃体W5";
+				padding:5px 30px 10px 30px;
+				/* margin-left:8%;		 */
+				cursor:pointer;
+			}
+            #vvcode{
+				color:rgb(27, 25, 25);/*字体颜色白色*/
+				background-color:#fff;	
+				font-size:20px;
+				margin-left:4%;	
+				cursor:pointer;
+			}
     </style>
 </head>
 <body>
@@ -197,19 +222,63 @@
             <!-- <div class="input2">
                 请输入验证码
             </div> -->
-            <input type="text" name="" id="input2" class="input2" value="单行输入">
+            <input type="text" id="vcode" placeholder="验证码" >
+            <span id="code" title="看不清，换一张"></span>
+            <span id="vvcode"  title="看不清，换一张" onclick="changeImg()">换一张</span>
+            <!-- <input type="text" name="" id="input2" class="input2" value="单行输入">
             <div class="input3">
                 验证码
-            </div>
+            </div> -->
         </div>
         <div class="clock2">
             <button class="BT0" onclick="takeIn()">注册</button>
         </div>
     </div>
 </body>
-<script>
+<script type="text/javascript">
     function takeIn() {
         window.location = "http://localhost:3000";
     }
+    var code='PCAE';//声明一个变量用于存储生成的验证码
+		document.getElementById("code").οnclick=changeImg;
+		function changeImg(){
+			//alert("换图片");
+			var arrays=new Array(
+				'1','2','3','4','5','6','7','8','9','0',
+				'a','b','c','d','e','f','g','h','i','j',
+				'k','l','m','n','o','p','q','r','s','t',
+				'u','v','w','x','y','z',
+				'A','B','C','D','E','F','G','H','I','J',
+				'K','L','M','N','O','P','Q','R','S','T',
+				'U','V','W','X','Y','Z'				
+			);
+			code='';//重新初始化验证码
+			//alert(arrays.length);
+			//随机从数组中获取四个元素组成验证码
+			for(var i=0;i<4;i++){
+			//随机获取一个数组的下标
+				var r=parseInt(Math.random()*arrays.length);
+				code+=arrays[r];
+				//alert(arrays[r]);
+			}
+			//alert(code);
+			document.getElementById('code').innerHTML=code;//将验证码写入指定区域
+		}		
+		
+		//效验验证码(表单被提交时触发)
+		function check(){
+			//获取用户输入的验证码
+			var input_code=document.getElementById('vcode').value;
+			//alert(input_code+"----"+code);
+			if(input_code.toLowerCase()==code.toLowerCase())
+			{
+				//验证码正确(表单提交)
+				return true;
+			}
+			alert("请输入正确的验证码!");
+			
+			//验证码不正确,表单不允许提交
+			return false;
+		}
 </script>
 </html>
