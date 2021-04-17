@@ -144,13 +144,18 @@
         </div>
         <div class="right">
             <div class="header">
-                <div class="managerM">
+                <div class="managerM" onclick="manager()">
                     管理员信息
                 </div>
-                <div class="userM">
+                <div class="userM" onclick="user()">
                     用户信息
                 </div>
             </div>
+            <tr>
+                <td>名称</td>
+                <td>表格名称</td>
+                <td>操作</td>
+            </tr>
             <!-- <div class="table">
                 <input type="text" class="serch">
                 <button class="serch0">
@@ -181,6 +186,12 @@
     }
     function mine() {
         window.location = "http://localhost:3000/mine";
+    }
+    function manager(){
+        window.location = "http://localhost:3000/managerM"
+    }
+    function user(){
+        window.location = "http://localhost:3000/userM"
     }
 </script>
 
