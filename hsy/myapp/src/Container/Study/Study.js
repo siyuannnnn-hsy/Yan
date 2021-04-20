@@ -25,17 +25,46 @@ export default class Study extends Component {
         onChange={(tab, index) => { console.log('onChange', index, tab); }}
         onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
       >
-        <div style={{ display: 'flex',height:'300px',color:'gray', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
-          Content of first tab
+        <div style={{ display: 'flex',height:'300px',color:'gray', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff'}}>
+          {/* 每日任务 */}
+          <div style={{width:'2200px',marginTop:'-200px',float:'left',backgroundColor:'#F5FAFA',height:'40px',fontSize:'15px'}}>
+          学习英语，做阅读积累语感，背作文例句背单词
+          </div>
+          <div style={{width:'2000px',marginTop:'-100px',float:'left',marginLeft:'-385px',backgroundColor:'#F5FAFA',height:'40px',fontSize:'15px'}}>
+          英语单词阅读两个作文
+          </div>
+          <div style={{width:'2000px',float:'left',marginLeft:'-350px',backgroundColor:'#F5FAFA',height:'40px',fontSize:'15px'}}>
+          英语单词阅读两个作文
+          </div>
         </div>
         <div style={{ display: 'flex',height:'300px',color:'gray', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
-          Content of second tab
+            <div>
+              accord 使符合，相一致(with)
+            </div>    
+            <div>
+              account 记述，叙述
+            </div>
+            <div>
+              accumulate 积累，积攒，积聚
+            </div>
+            <div>
+              accurate 准确的 ，精确的 
+            </div>
+            <div>
+              accuse 指控，指责
+            </div>
+            <div>
+              accustom 使习惯于
+            </div>
+            <div>
+              acquaint 使认识，使了解
+            </div>
         </div>
         <div style={{ display: 'flex',height:'300px',color:'gray', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
-          Content of third tab
+          研题库
         </div>
         <div style={{ display: 'flex',height:'300px',color:'gray', alignItems: 'center', justifyContent: 'center',  backgroundColor: '#fff' }}>
-          Content of forth tab
+          学习期刊
         </div>
       </Tabs>
       <WhiteSpace />
@@ -50,16 +79,16 @@ export default class Study extends Component {
         renderTab={tab => <span>{tab.title}</span>}
       >
         <div style={{ display: 'flex',height:'250px',color:'gray', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
-          Content of first tab
+          数学
         </div>
         <div style={{ display: 'flex',height:'250px',color:'gray', alignItems: 'center', justifyContent: 'center',  backgroundColor: '#fff' }}>
-          Content of second tab
+          英语
         </div>
         <div style={{ display: 'flex',height:'250px',color:'gray', alignItems: 'center', justifyContent: 'center',  backgroundColor: '#fff' }}>
-          Content of third tab
+          政治
         </div>
         <div style={{ display: 'flex',height:'250px',color:'gray', alignItems: 'center', justifyContent: 'center',  backgroundColor: '#fff' }}>
-          Content of forth tab
+          专业课
         </div>
       </Tabs>
       <WhiteSpace />
