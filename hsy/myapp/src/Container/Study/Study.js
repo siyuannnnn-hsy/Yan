@@ -96,7 +96,21 @@ export default class Study extends Component {
                  
         </div>
         <div style={{ display: 'flex',height:'300px',color:'gray', alignItems: 'center', justifyContent: 'center',  backgroundColor: '#fff' }}>
-          学习期刊
+          <div>
+            <p>《发现》（Discover）杂志是世界闻名的科普杂志，杂志内容定位于
+                        科学、技术和未来，具体栏目包括健康与医学、心灵与脑、
+                        技术、空间、人类起源、生活世界、环境、物理与数学等等。</p>
+            <p>《自然》（Nature）是世界上历史悠久的、
+                        很有名望的科学杂志之一，是少数依然发表来自很多科学
+                        领域的一手研究论文的杂志。在许多科学研究领域中，很多重要
+                        、前沿的研究结果都是以短讯的形式发表在《自然》上。</p>
+            <p>《国家地理》内容包括地理、科普、历史
+                        、文化、实事、摄影等。部分文章经常涉及到自然环境、
+                        森林砍伐、环境污染、全球暖化、濒危物种等，一系列的主题充分
+                        满足读者对地理探索的好奇心。</p>
+            {/* <p></p>
+            <p></p> */}
+          </div>
         </div>
       </Tabs>
       <WhiteSpace />
