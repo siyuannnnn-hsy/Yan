@@ -74,6 +74,7 @@ export default class Mine extends Component {
                     </Item>
                     </Link>
                     
+                    
                     {/* <Link to='/login'><span style={{color:'#fff'}}>退出</span></Link> */}
                 </List>
             </div>
