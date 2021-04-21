@@ -11,7 +11,8 @@ export default class Mine extends Component {
         return (
             <div>
                 <div style={{height:'130px',textAlign:'center'}}>
-                    <img src={require('./1.jpg').default} style={{height:'100px',width:'100px',marginTop:'25px',borderRadius:'100px'}} />
+                    <img src={require('./1.jpg').default} style={{height:'100px',width:'100px',
+                    marginTop:'25px',borderRadius:'100px'}} />
                 </div>
                 <p style={{textAlign:'center',fontSize:'20px'}}>考研人001</p>
                 <List >
@@ -67,9 +68,13 @@ export default class Mine extends Component {
                         历史成绩
                         </Item>
                     </Link>
+                    <Link to='/'> 
                     <Item arrow="horizontal" style={{marginTop:'5px'}} multipleLine onClick={() => {}}>
                     退出登录
                     </Item>
+                    </Link>
+                    
+                    {/* <Link to='/login'><span style={{color:'#fff'}}>退出</span></Link> */}
                 </List>
             </div>
         )
