@@ -14,31 +14,45 @@ export default class Xinxi extends Component {
                 <div >
                     <div className='userName' style={{color:'black',marginTop:'28px',marginLeft:'30px',fontSize:'20px'}}>
                         昵称
-                        <input style={{marginLeft:'18px',width:'248px'}}></input>
+                        <input style={{marginLeft:'18px',width:'248px'}} value={{}}/>
+                            {/* 小黄 */}
+                            {/* </input> */}
                     </div>
                     <div className='userName' style={{color:'black',marginTop:'28px',marginLeft:'30px',fontSize:'20px'}}>
                         手机号
-                        <input style={{marginLeft:'18px',width:'228px'}}></input>
+                        <input style={{marginLeft:'18px',width:'228px'}}>
+                            {/* 12563489523 */}
+                            </input>
                     </div>
                     <div className='userName' style={{color:'black',marginTop:'28px',marginLeft:'30px',fontSize:'20px'}}>
                         密码
-                        <input style={{marginLeft:'18px',width:'248px'}}></input>
+                        <input style={{marginLeft:'18px',width:'248px'}}>
+                            {/* 123456 */}
+                            </input>
                     </div>
                     <div className='userName' style={{color:'black',marginTop:'28px',marginLeft:'30px',fontSize:'20px'}}>
                         座右铭
-                        <input style={{marginLeft:'18px',width:'228px'}}></input>
+                        <input style={{marginLeft:'18px',width:'228px'}}>
+                            {/* 这个人很懒，什么也没有留下 */}
+                            </input>
                     </div>
                     <div className='userName' style={{color:'black',marginTop:'28px',marginLeft:'30px',fontSize:'20px'}}>
                         专业
-                        <input style={{marginLeft:'18px',width:'248px'}}></input>
+                        <input style={{marginLeft:'18px',width:'248px'}}>
+                            {/* 软件工程 */}
+                            </input>
                     </div>
                     <div className='userName' style={{color:'black',marginTop:'28px',marginLeft:'20px',fontSize:'20px'}}>
                         出生日期
-                        <input style={{marginLeft:'18px',width:'215px'}}></input>
+                        <input style={{marginLeft:'18px',width:'215px'}}>
+                            {/* 1999.01.01 */}
+                            </input>
                     </div>
                     <div className='userName' style={{color:'black',marginTop:'28px',marginLeft:'30px',fontSize:'20px'}}>
                         验证码
-                        <input style={{marginLeft:'18px',width:'228px'}}></input>
+                        <input style={{marginLeft:'18px',width:'228px'}}>
+
+                        </input>
                     </div>
                 </div>
             </div>
