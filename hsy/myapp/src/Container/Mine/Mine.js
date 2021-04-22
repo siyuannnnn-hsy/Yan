@@ -10,6 +10,7 @@ export default class Mine extends Component {
     render() {
         return (
             <div>
+                <header>研</header>
                 <div style={{height:'130px',textAlign:'center'}}>
                     <img src={require('./1.jpg').default} style={{height:'100px',width:'100px',
                     marginTop:'25px',borderRadius:'100px'}} />
@@ -68,7 +69,7 @@ export default class Mine extends Component {
                         历史成绩
                         </Item>
                     </Link>
-                    <Link to='/'> 
+                    <Link to='/zhuce'> 
                     <Item arrow="horizontal" style={{marginTop:'5px'}} multipleLine onClick={() => {}}>
                     退出登录
                     </Item>
@@ -77,6 +78,17 @@ export default class Mine extends Component {
                     
                     {/* <Link to='/login'><span style={{color:'#fff'}}>退出</span></Link> */}
                 </List>
+                <footer style={{marginBottom:'0',marginTop:'245px'}}>
+                    <Link to={'/'} className='base-footer'>
+                        <i className="iconfont iconlinggan" style={{fontSize:'30px'}}></i>  
+                    </Link>
+                    <Link to={'/Study'} className='base-footer'>
+                        <i className="iconfont iconxuexi" style={{fontSize:'30px'}}></i>
+                    </Link>
+                    <Link to={'/Mine'} className='base-footer'>
+                        <i className="iconfont iconwode1" style={{fontSize:'30px'}}></i>
+                    </Link>
+                </footer> 
             </div>
         )
     }

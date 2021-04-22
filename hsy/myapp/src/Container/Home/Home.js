@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Carousel } from 'antd-mobile';
 import imgURL from './1.jpg';
 import { SearchBar, Button, WhiteSpace ,Card} from 'antd-mobile';
-
+import {BrowserRouter as Router,Route,Redirect,Switch, Link} from 'react-router-dom';
 export default class Home extends Component {
     state = {
         data: ['1', '2', '3'],
@@ -20,6 +20,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
+                <header>研</header>
                 {/* <WingBlank> */}
                 <SearchBar style={{height:'50px'}} placeholder="Search" maxLength={8} />
                
@@ -86,7 +87,17 @@ export default class Home extends Component {
                         <Card.Footer content="考研人123456" extra={<div>2021-3-10</div>} />
                     </Card>
                 <WhiteSpace size="lg" />
-                    
+                <footer style={{marginBottom:'0',marginTop:'90px'}}>
+                    <Link to={'/'} className='base-footer'>
+                    <i className="iconfont iconlinggan" style={{fontSize:'30px'}}></i>  
+                    </Link>
+                    <Link to={'/Study'} className='base-footer'>
+                    <i className="iconfont iconxuexi" style={{fontSize:'30px'}}></i>
+                    </Link>
+                    <Link to={'/Mine'} className='base-footer'>
+                    <i className="iconfont iconwode1" style={{fontSize:'30px'}}></i>
+                    </Link>
+                </footer> 
                 {/* </WingBlank> */}
             </div>
         )

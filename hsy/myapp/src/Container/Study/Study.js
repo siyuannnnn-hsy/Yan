@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Tabs, WhiteSpace, Badge } from 'antd-mobile';
+import {BrowserRouter as Router,Route,Redirect,Switch, Link} from 'react-router-dom';
 
 const tabs = [
     { title: <Badge text={'3'}>每日任务</Badge> },
@@ -18,6 +19,7 @@ export default class Study extends Component {
     render() {
         return (
             <div>
+              <header>研</header>
       <Tabs tabs={tabs}
         initialPage={1}
         tabBarActiveTextColor={"gray"}
@@ -138,6 +140,17 @@ export default class Study extends Component {
         </div>
       </Tabs>
       <WhiteSpace />
+      <footer style={{marginBottom:'0',marginTop:'10px'}}>
+        <Link to={'/'} className='base-footer'>
+          <i className="iconfont iconlinggan" style={{fontSize:'30px'}}></i>  
+        </Link>
+        <Link to={'/Study'} className='base-footer'>
+          <i className="iconfont iconxuexi" style={{fontSize:'30px'}}></i>
+        </Link>
+        <Link to={'/Mine'} className='base-footer'>
+          <i className="iconfont iconwode1" style={{fontSize:'30px'}}></i>
+        </Link>
+        </footer> 
     </div>
   
         )
