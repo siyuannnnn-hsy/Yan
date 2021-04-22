@@ -24,10 +24,10 @@ function App() {
         {/* <header>研</header> */}
 
         <section>
-          <Route exact path="/" component={Home} exact/>
+          <Route exact path="/Home" component={Home} exact/>
           <Route path="/Study" component={Study} exact/>
           <Route path="/zhuce" component={zhuce} exact/>
-          <Route path="/takeIn" component={takeIn} exact/>
+          <Route path="/" component={takeIn} exact/>
 
           <Route path="/Mine" component={Mine} exact/>
           <Route path="/Mine/Xinxi" component={Xinxi} exact/>

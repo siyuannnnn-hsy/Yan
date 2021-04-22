@@ -71,7 +71,7 @@ export default class Mine extends Component {
                         历史成绩
                         </Item>
                     </Link>
-                    <Link to='/zhuce'> 
+                    <Link to='/'> 
                     <Item arrow="horizontal" style={{marginTop:'5px'}} multipleLine onClick={() => {}}>
                     退出登录
                     </Item>

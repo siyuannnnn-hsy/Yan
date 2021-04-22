@@ -71,7 +71,7 @@ export default class AppZhuce extends Component {
                         <input style={{marginLeft:'18px',width:'215px'}} value='2000.01.01'/>
                            
                     </div> */}
-                    <Link to={'/takeIn'}>
+                    <Link to={'/'}>
                     <Button style={{marginTop:'80px',backgroundColor:'gray'}}>注册</Button>
                     </Link>
                     
