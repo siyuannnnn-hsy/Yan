@@ -5,7 +5,8 @@ import {BrowserRouter as Router,Route,Redirect,Switch, Link} from 'react-router-
 import Home from './Container/Home/Home';
 import Mine from './Container/Mine/Mine';
 import Study from './Container/Study/Study';
-import zhuce from './Container/Start/zhuce'
+import zhuce from './Container/Start/zhuce';
+import takeIn from './Container/Start/takeIn';
 import { Icon } from 'antd-mobile';
 import './assets/fonts/iconfont.css';
 import Xinxi from './Container/Mine/Xinxi';
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/" component={Home} exact/>
           <Route path="/Study" component={Study} exact/>
           <Route path="/zhuce" component={zhuce} exact/>
+          <Route path="/takeIn" component={takeIn} exact/>
 
           <Route path="/Mine" component={Mine} exact/>
           <Route path="/Mine/Xinxi" component={Xinxi} exact/>

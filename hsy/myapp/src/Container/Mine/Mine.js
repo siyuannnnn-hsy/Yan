@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { List } from 'antd-mobile';
 import { Link } from 'react-router-dom';
-
+// import { NavBar, Icon,WingBlank} from 'antd-mobile';
+import { NavBar, Icon,WingBlank} from 'antd-mobile';
 
 const Item = List.Item;
 const Brief = Item.Brief;
@@ -14,6 +15,7 @@ export default class Mine extends Component {
                 <div style={{height:'130px',textAlign:'center'}}>
                     <img src={require('./1.jpg').default} style={{height:'100px',width:'100px',
                     marginTop:'25px',borderRadius:'100px'}} />
+                    <i style={{fontSize:22,color:'balck'}} className='iconfont icon-back'></i>
                 </div>
                 <p style={{textAlign:'center',fontSize:'20px'}}>考研人001</p>
                 <List >
