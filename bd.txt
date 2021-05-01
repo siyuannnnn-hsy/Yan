@@ -1,0 +1,1 @@
+已执行的 SQL 语句：insert into `yan`.`user` (`userid`, `iphone`, `pw`, `userName`) values ('0011', '12556328542', '111111', '考研人001')错误号：1264错误信息：Out of range value for column 'iphone' at row 1
