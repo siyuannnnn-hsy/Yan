@@ -181,19 +181,40 @@
                         <th>
                             具体内容    
                         </th>
-                        <th>
-                            对表格的操作
-                        </th>
+                        <th id="action">编辑</th>
+                        <!-- <th></th> -->
+                        <th id="action">删除</th>
                     </tr>
                 </thead>
-                <tr>
-                    <td>accommodate</td>
-                    <td>使适应，使符合一致</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
+                <tbody id="result"></tbody>
+                <%for(var i=0;i < danci.length;i++){%>
+                    <tr>
+                        <td>
+                            <%= danci[i]["content"]%>
+                        </td>
+                        <td>
+                            <%= danci[i]["time"]%>
+                        </td>
+                        <td>
+                            <%= danci[i]["userID"]%>
+                        </td>
+                        <td>
+                            <%= danci[i]["sure"]%>
+                        </td>
+                        <td>
+                        <button>
+                            <!-- <a href="/editB?signId=<%=danci[i]["signId"]%>"> -->
+                            编辑
+                        </button></td>
+                        <td>
+                                <button>
+                                    <!-- <a href="/delbm?signId=<%=danci[i]["signId"]%>&&activeId=<%=danci[i]["activeId"]%>"> -->
+                                    删除
+                                <!-- </a> -->
+                                </button>
+                        </td>
+                    </tr>
+                <%}%>
                 <tr>
                     <td>accompany</td>
                     <td>陪伴，伴随</td>
@@ -221,22 +242,6 @@
                 <tr>
                     <td>account</td>
                     <td>叙述</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>政治中后期复习</td>
-                    <td>肖肖秀荣的形势与政策，肖四肖八，徐涛的背诵小黄书</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>政治中后期复习</td>
-                    <td>肖肖秀荣的形势与政策，肖四肖八，徐涛的背诵小黄书</td>
                     <td>
                         <button>编辑</button>
                         <button>删除</button>

@@ -95,7 +95,7 @@
             margin-top:10px;
         }
         .table0{
-            margin-top:35px;
+            margin-top:3px;
             margin-left: 250px;
         }
         .serch{
@@ -113,11 +113,12 @@
             /* margin-top:150px; */
             text-align: center;
             display: block;
-            margin-top: 100px;
+            margin-top: 10px;
         }
         table td, table th {
             border: 1px solid #cad9ea;
             color: #666;
+            width: 1200px;
             height: 45px;
         }
         table thead th {
@@ -130,7 +131,14 @@
         table tr:nth-child(even) {
             background: #F5FAFA;
         }
-
+        #foot {
+            border-collapse: collapse;
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            margin-left: 60px;
+            margin-top: 10%;
+        }
     </style>
 </head>
 <body>
@@ -181,56 +189,39 @@
                         <th>
                             具体内容     
                         </th>
-                        <th>
-                            对表格的操作
-                        </th>
+                        <th id="action">编辑</th>
+                        <!-- <th></th> -->
+                        <th id="action">删除</th>
                     </tr>
-                </thead>
-                <tr>
-                    <td>为解决计算机与打印机之间速度不匹配的问题，通常设置一个打印数据缓冲区，主机将要输出的数据依次写入该缓冲区，而打印机则依次从该缓冲区中取出数据。该缓冲区的逻辑结构应该是
-                        A.栈 B.队列 C.树 D.图
-                    </td>
-                    <td>A</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>设栈S和队列Q的初始状态均为空，元素abcdefg依次进入栈S。若每个元素出栈后立即进入队列Q，且7个元素出队的顺序是bdcfeag，则栈S的容量至少是 A.1 B.2 C.3 D.4</td>
-                    <td>D</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>给定二叉树图所示。设N代表二叉树的根，L代表根结点的左子树，R代表根结点的右子树。若遍历后的结点序列为3，1，7，5，6，2，4，则其遍历方式是 A.LRN B.NRL C.RLN D.RNL</td>
-                    <td>B</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>已知一棵完全二叉树的第6层(设根为第1层)有8个叶结点，则完全二叉树的结点个数最多是A.39 B.52 C.111 D.119</td>
-                    <td>C</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>将森林转换为对应的二叉树，若在二叉树中，结点u是结点v的父结点的父结点，则在原来的森林中，u和v可能具有的关系是 I.父子关系 II.兄弟关系 III. u的父结点与v的父结点是兄弟关系
-                        A.只有II B.I和II C.I和III D.I、II和III
-                    </td>
-                    <td>C</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
+                </thead><tbody id="result"></tbody>
+                <%for(var i=0;i < tiku.length;i++){%>
+                    <tr>
+                        <td>
+                            <%= tiku[i]["subject"]%>
+                        </td>
+                        <td>
+                            <%= tiku[i]["content"]%>
+                        </td>
+                        <td>
+                        <button>
+                            <!-- <a href="/editB?signId=<%=tiku[i]["signId"]%>"> -->
+                            编辑
+                        </button></td>
+                        <td>
+                                <button>
+                                    <!-- <a href="/delbm?signId=<%=tiku[i]["signId"]%>&&activeId=<%=tiku[i]["activeId"]%>"> -->
+                                    删除
+                                <!-- </a> -->
+                                </button>
+                        </td>
+                    </tr>
+                <%}%>
+                
             </table>
+            <!-- <div id="foot">
+                <p style="float: left;" onclick="showAct()">返回上一页</p>
+                <p style="float: right;">确认</p>
+            </div> -->
         </div>
     </div>
 </body>

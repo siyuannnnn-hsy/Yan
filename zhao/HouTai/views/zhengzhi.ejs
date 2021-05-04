@@ -122,7 +122,9 @@
         table tr:nth-child(even) {
             background: #F5FAFA;
         }
-
+        /* #foot {
+            margin-left: -500px;
+        } */
     </style>
 </head>
 <body>
@@ -170,43 +172,39 @@
                         <th>
                             具体内容     
                         </th>
-                        <th>
-                            对表格的操作
-                        </th>
+                        <th id="action">编辑</th>
+                        <!-- <th></th> -->
+                        <th id="action">删除</th>
                     </tr>
                 </thead>
-                <tr>
-                    <td>政治前期复习</td>
-                    <td>肖秀荣精讲精练+1000题，至少看三遍，做三遍题</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>政治中后期复习</td>
-                    <td>肖肖秀荣的形势与政策，肖四肖八，徐涛的背诵小黄书</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>考研政治相关</td>
-                    <td>马原部分约占24%、毛概部分约占30%、
-                        中国近现代史纲要约占14%、
-                        思想道德修养与法律基础约占16%、
-                        形势与政策以及当代世界经济与政治约占16%、
-                        单项选择题16分(16小题，每小题1分)、
-                        多项选择题34分(17小题，每小题2分)、
-                        材料分析题50分
-                    </td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
+                <tbody id="result"></tbody>
+                <%for(var i=0;i < zhengzhi.length;i++){%>
+                    <tr>
+                        <td>
+                            <%= zhengzhi[i]["subject"]%>
+                        </td>
+                        <td>
+                            <%= zhengzhi[i]["content"]%>
+                        </td>
+                        <td>
+                        <button>
+                            <!-- <a href="/editB?signId=<%=zhengzhi[i]["signId"]%>"> -->
+                            编辑
+                        </button></td>
+                        <td>
+                                <button>
+                                    <!-- <a href="/delbm?signId=<%=zhengzhi[i]["signId"]%>&&activeId=<%=zhengzhi[i]["activeId"]%>"> -->
+                                    删除
+                                <!-- </a> -->
+                                </button>
+                        </td>
+                    </tr>
+                <%}%>
             </table>
+            <!-- <div id="foot">
+                <p style="float: left;" onclick="showAct()">返回上一页</p>
+                <p style="float: right;">确认</p>
+            </div> -->
         </div>
     </div>
 </body>

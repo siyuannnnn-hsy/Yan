@@ -105,7 +105,7 @@
             /* margin-top:150px; */
             text-align: center;
             display: block;
-            margin-top: 100px;
+            margin-top: 10px;
         }
         table td, table th {
             border: 1px solid #cad9ea;
@@ -122,7 +122,14 @@
         table tr:nth-child(even) {
             background: #F5FAFA;
         }
-
+        #foot {
+            border-collapse: collapse;
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            margin-left: 60px;
+            margin-top: 10%;
+        }
     </style>
 </head>
 <body>
@@ -170,44 +177,41 @@
                         <th>
                             具体内容     
                         </th>
-                        <th>
-                            对表格的操作
-                        </th>
+                        <th id="action">编辑</th>
+                        <!-- <th></th> -->
+                        <th id="action">删除</th>
                     </tr>
                 </thead>
-                <tr>
-                    <td>数据结构</td>
-                    <td>这门课程是统考408初试考试四门专业课科目之一，也是大多数高校考研计算机初试必考科目，可见数据结构这门课在考研计算机初试中的重要地位。这门课程在计算机考研的考试范围中也是非常重要的，而《数据结构》的重点章节是线性表、树、图、查找和排序。参考书目是《数据结构C语言版》《数据结构精讲和习题讲解》（严蔚敏），大家可以结合这两本书进行知识点的学习，和一些习题的练习。</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>计算机组成原理</td>
-                    <td>《计算机组成原理》的重点在数据的表示和运算、存储器层次结构、指令系统、中央处理器(CPU)、总线、输入输出(I/O)系统。参考书目是《计算机组成原理(第2版)》(唐朔飞主编)，《计算机组成原理-学习指导与习题解答》。复习时要掌握具体的知识体系，总结出自己的知识框架，多做练习。</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>操作系统</td>
-                    <td>《操作系统》的重点在进程管理和内存管理，其次是文件管理和I/O管理。参考书目是《计算机操作系统》(汤子瀛等主编)。注意的是，存储部分、I/O部分和计算机组成原理课程中有重合，可以相互结合着看。虽然这部分知识相对来说没有那么难，但是复习的时候也不能忽视。</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>计算机网络</td>
-                    <td>这门课程对于计算机专业的同学来说并不陌生，大家在前几年的课程中都有学过，这门课程的重点在物理层、数据链路层、网络层、传输层、应用层这些层次结构。要明白各个层次结构之间的关系，明白每个层都具有什么功能，拥有什么协议，重要的一些协议的内容以及作用。要能灵活地将各个层次联系起来。</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
+                <tbody id="result"></tbody>
+                <%for(var i=0;i < zhuanyeke.length;i++){%>
+                    <tr>
+                        <td>
+                            <%= zhuanyeke[i]["subject"]%>
+                        </td>
+                        <td>
+                            <%= zhuanyeke[i]["content"]%>
+                        </td>
+                        <!-- <th></th> -->
+                        <th><button>
+                            <!-- <a href="/zhuanyeke?signId=<%=zhuanyeke[i]["signId"]%>"> -->
+                            编辑
+                        </button></th>
+                        
+                        <!-- <th></th> -->
+                        <td>
+                                <button>
+                                    <!-- <a href="/delbm?signId=<%=zhuanyeke[i]["signId"]%>&&activeId=<%=zhuanyeke[i]["activeId"]%>"> -->
+                                    删除
+                                <!-- </a> -->
+                                </button>
+                        </td>
+                    </tr>
+                <%}%>
             </table>
+            <!-- <div id="foot">
+                <p style="float: left;" onclick="showAct()">返回上一页</p>
+                <p style="float: right;">确认</p>
+            </div> -->
         </div>
     </div>
 </body>

@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>推荐</title>
-    <style>
+    <style type="text/css">
+    * {
+            margin: 0;
+            padding: 0;
+        }
         .left{
             height:705px;
             width:300px;
@@ -87,7 +91,7 @@
             margin-top:10px;
         }
         .table0{
-            margin-top:35px;
+            margin-top:5px;
             margin-left: 250px;
         }
         .serch{
@@ -105,7 +109,7 @@
             /* margin-top:150px; */
             text-align: center;
             display: block;
-            margin-top: 100px;
+            margin-top: 50px;
         }
         table td, table th {
             border: 1px solid #cad9ea;
@@ -122,6 +126,27 @@
         table tr:nth-child(even) {
             background: #F5FAFA;
         }
+        #action{
+            background-color: #CCE8EB;
+            border: 1px solid #eee;
+            width: 260px;    
+        }
+        .container {
+            margin-top: 80px;
+        }
+        button{
+            /* background-color: #1daea9; */
+        }
+        #foot {
+            border-collapse: collapse;
+            width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            margin-left: 200px;
+            padding-left: 120px;
+            margin-top: 40%;
+        }
+        
 
     </style>
 </head>
@@ -164,18 +189,39 @@
             <table  class="table">
                 <thead>
                     <tr>
-                        <th>
-                            名称
-                        </th>
-                        <th>
-                            具体内容     
-                        </th>
-                        <th>
-                            对表格的操作
-                        </th>
+                        <!-- <th>活动ID</th> -->
+                        <th>名称</th>
+                        <th>具体内容</th>
+                        <th id="action">编辑</th>
+                        <!-- <th></th> -->
+                        <th id="action">删除</th>
                     </tr>
                 </thead>
-                <tr>
+                <tbody id="result"></tbody>
+                <%for(var i=0;i < tuijian.length;i++){%>
+                    <tr>
+                        <td>
+                            <%= tuijian[i]["Tname"]%>
+                        </td>
+                        <td>
+                            <%= tuijian[i]["content"]%>
+                        </td>
+                        <td>
+                        <button>
+                            <!-- <a href="/editB?signId=<%=tuijian[i]["signId"]%>"> -->
+                            编辑
+                        </button></td>
+                        <td>
+                                <button>
+                                    <!-- <a href="/delbm?signId=<%=tuijian[i]["signId"]%>&&activeId=<%=tuijian[i]["activeId"]%>"> -->
+                                    删除
+                                <!-- </a> -->
+                                </button>
+                        </td>
+                    </tr>
+                <%}%>
+                
+                <!-- <tr>
                     <td>英语书籍</td>
                     <td>红宝书、恋练有词、考研真相、黄皮书、真题超精解、考研英语高分写作、王江涛的考研英语高分写作字帖</td>
                     <td>
@@ -214,8 +260,12 @@
                         <button>编辑</button>
                         <button>删除</button>
                     </td>
-                </tr>
+                </tr> -->
             </table>
+        </div>
+        <div id="foot">
+            <p style="float: left;" onclick="showAct()">返回上一页</p>
+            <p style="float: right;">确认</p>
         </div>
     </div>
 </body>

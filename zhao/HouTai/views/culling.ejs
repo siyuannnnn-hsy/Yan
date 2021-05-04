@@ -2,10 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>精选界面</title>
-    <style>
+    <style type="text/css">
+        * {
+                margin: 0;
+                padding: 0;
+            }
         .left{
             height:705px;
             width:300px;
@@ -77,6 +81,7 @@
         .right{
             float: left;
             margin-top: -700px;
+            margin-left: 400px;
         }
         .header{
             height:80px;
@@ -99,6 +104,58 @@
             background-color: #bebebe;
             margin-top:-80px; 
             border-radius: 12px;
+        }
+
+
+        #foot {
+            border-collapse: collapse;
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            margin-left: 60px;
+            margin-top: 10%;
+        }
+        table {
+            border-collapse: collapse;
+            width: 885px;
+            margin-left: 80px;
+            /* margin-top:150px; */
+            text-align: center;
+            display: block;
+            margin-top: 50px;
+        }
+        table td, table th {
+            border: 1px solid #cad9ea;
+            color: #666;
+            height: 45px;
+        }
+        table thead th {
+            background-color: #CCE8EB;
+            width: 280px;
+            margin-left: 20px;
+            /* padding-left: 200px; */
+        }
+        table tr:nth-child(odd) {
+            background: #fff;
+        }
+        table tr:nth-child(even) {
+            background: #F5FAFA;
+        }
+        #action{
+            background-color: #CCE8EB;
+            border: 1px solid #eee;
+            /* margin-top:200px; */
+            width: 160px;    
+        }
+        table tr {
+            background: #fff;
+        }
+
+        .container {
+            margin-top: 80px;
+        }
+        button{
+            /* background-color: #1daea9; */
         }
         /* .table{
             margin-top:35px;
@@ -151,22 +208,55 @@
                     用户信息
                 </div>
             </div>
-            <tr>
-                <td>名称</td>
-                <td>表格名称</td>
-                <td>操作</td>
-            </tr>
-            <tr>
-                <td>英语书籍</td>
-                <td>红宝书、恋练有词、考研真相、黄皮书、真题超精解、考研英语高分写作、王江涛的考研英语高分写作字帖</td>
-                <td>操作</td>
-            </tr>
-            <!-- <div class="table">
-                <input type="text" class="serch">
-                <button class="serch0">
-                    查询
-                </button>
-            </div> -->
+            <table  class="table">
+                <thead>
+                    <tr>
+                        <!-- <th>活动ID</th> -->
+                        <th>注意事项</th>
+                        <th>科目</th>
+                        <th>相关内容</th>
+                        <!-- <th></th> -->
+                        <th id="action">编辑</th>
+                        <!-- <th></th> -->
+                        <th id="action">删除</th>
+                    </tr>
+                </thead>
+    
+                <tbody id="result"></tbody>
+                <%for(var i=0;i < culling.length;i++){%>
+                    <tr>
+                        <td>
+                            <%= culling[i]["Sname"]%>
+                        </td>
+                        <td>
+                            <%= culling[i]["subject"]%>
+                        </td>
+                        <td>
+                            <%= culling[i]["content"]%>
+                        </td>
+                        <!-- <th></th> -->
+                        <th><button>
+                            <!-- <a href="/culling?signId=<%=culling[i]["signId"]%>"> -->
+                            编辑
+                        </button></th>
+                        
+                        <!-- <th></th> -->
+                        <td>
+                                <button>
+                                    <!-- <a href="/delbm?signId=<%=culling[i]["signId"]%>&&activeId=<%=culling[i]["activeId"]%>"> -->
+                                    删除
+                                <!-- </a> -->
+                                </button>
+                        </td>
+                    </tr>
+                <%}%>
+                
+    
+            </table>
+            <div id="foot">
+                <p style="float: left;" onclick="showAct()">返回上一页</p>
+                <p style="float: right;">确认</p>
+            </div>
         </div>
     </div>
 </body>

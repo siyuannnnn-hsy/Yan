@@ -85,6 +85,23 @@ CREATE TABLE `kecheng` (
 
 /*Data for the table `kecheng` */
 
+/*Table structure for table `managerlist` */
+
+DROP TABLE IF EXISTS `managerlist`;
+
+CREATE TABLE `managerlist` (
+  `Mname` varchar(10) NOT NULL,
+  `managerID` varchar(10) NOT NULL,
+  `PW` varchar(6) NOT NULL,
+  `pNum` varchar(11) NOT NULL,
+  `zhiwei` varchar(20) NOT NULL,
+  PRIMARY KEY (`managerID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `managerlist` */
+
+insert  into `managerlist`(`Mname`,`managerID`,`PW`,`pNum`,`zhiwei`) values ('小张','001','123456','15224589632','职员'),('小钱','002','123456','12548523695','职员'),('小孙','003','555555','51258469528','职员'),('小李','004','333333','12563248523','职员'),('小王','005','111111','15236485236','职员');
+
 /*Table structure for table `math` */
 
 DROP TABLE IF EXISTS `math`;
@@ -125,6 +142,23 @@ CREATE TABLE `renwu` (
 
 /*Data for the table `renwu` */
 
+insert  into `renwu`(`content`,`time`,`sure`,`userID`) values ('背英语单词20个','1小时','已完成','001');
+
+/*Table structure for table `study` */
+
+DROP TABLE IF EXISTS `study`;
+
+CREATE TABLE `study` (
+  `title` varchar(20) NOT NULL,
+  `content` varchar(200) NOT NULL,
+  `subject` varchar(20) NOT NULL,
+  `userID` varchar(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `study` */
+
+insert  into `study`(`title`,`content`,`subject`,`userID`) values ('做一套数学试卷','数学试卷练习必须要跟上','数学','001'),('背单词20个','关于背单词的重要性，上网查查就知道了','英语','001');
+
 /*Table structure for table `tiku` */
 
 DROP TABLE IF EXISTS `tiku`;
@@ -133,19 +167,32 @@ CREATE TABLE `tiku` (
   `subject` varchar(50) NOT NULL,
   `content` varchar(200) NOT NULL,
   `answer` varchar(20) NOT NULL,
-  `userID` varchar(6) NOT NULL,
-  PRIMARY KEY (`userID`)
+  `userID` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `tiku` */
 
-insert  into `tiku`(`subject`,`content`,`answer`,`userID`) values ('计算机','为解决计算机与打印机之间速度不匹配的问题，通常设置一个打印数据缓冲区，主机将要输出的数据依次写入该缓冲区，而打印机则依次从该缓冲区中取出数据。该缓冲区的逻辑结构应该是 A.栈 B.队列 C.树 D.图','A','001'),('计算机','设栈S和队列Q的初始状态均为空，元素abcdefg依次进入栈S。若每个元素出栈后立即进入队列Q，且7个元素出队的顺序是bdcfeag，则栈S的容量至少是 A.1 B.2 C.3 D.4','D','002');
+insert  into `tiku`(`subject`,`content`,`answer`,`userID`) values ('计算机','为解决计算机与打印机之间速度不匹配的问题，通常设置一个打印数据缓冲区，主机将要输出的数据依次写入该缓冲区，而打印机则依次从该缓冲区中取出数据。该缓冲区的逻辑结构应该是 A.栈 B.队列 C.树 D.图','A','001'),('计算机','设栈S和队列Q的初始状态均为空，元素abcdefg依次进入栈S。若每个元素出栈后立即进入队列Q，且7个元素出队的顺序是bdcfeag，则栈S的容量至少是 A.1 B.2 C.3 D.4','D','001'),('计算机','给定二叉树图所示。设N代表二叉树的根，L代表根结点的左子树，R代表根结点的右子树。若遍历后的结点序列为3，1，7，5，6，2，4，则其遍历方式是 A.LRN B.NRL C.RLN D.RNL','B','001'),('计算机','将森林转换为对应的二叉树，若在二叉树中，结点u是结点v的父结点的父结点，则在原来的森林中，u和v可能具有的关系是 I.父子关系 II.兄弟关系 III. u的父结点与v的父结点是兄弟关系A.只有II B.I和II C.I和III D.I、II和III','C','001');
 
-/*Table structure for table `user` */
+/*Table structure for table `tuijian` */
 
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `tuijian`;
 
-CREATE TABLE `user` (
+CREATE TABLE `tuijian` (
+  `Tname` varchar(20) NOT NULL,
+  `content` varchar(200) NOT NULL,
+  `subject` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `tuijian` */
+
+insert  into `tuijian`(`Tname`,`content`,`subject`) values ('英语书籍','红宝书、恋练有词、考研真相、黄皮书、真题超精解、考研英语高分写作、王江涛的考研英语高分写作字帖','英语'),('考研政治','肖秀荣《1000题》、肖秀荣《知识点精讲精练》、肖秀荣《命题冲刺8套卷》、肖秀荣《命题终极预测4套卷》、徐涛20题','政治'),('考研数学','李永乐、王式安考研数学复习全书、张宇36讲、张宇1000题、张宇真题大全讲、合工大五套卷、高数18讲','数学'),('考研专业课','专业课复习并没有太多的方法论，就是一个很简单的事，书读百遍，其义自见。','专业课'),('考研建议','不要着急！考研和高考一样，就是一场考试。考试最重要的就是弄懂所有知识点，然后在考场上多做几道题。而你在接下来的一年里需要做的无非就是好好学习，天天向上罢了。','其他');
+
+/*Table structure for table `userlist` */
+
+DROP TABLE IF EXISTS `userlist`;
+
+CREATE TABLE `userlist` (
   `name` varchar(20) NOT NULL,
   `userID` varchar(6) NOT NULL,
   `iphoneNum` char(11) NOT NULL,
@@ -155,23 +202,23 @@ CREATE TABLE `user` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*Data for the table `user` */
+/*Data for the table `userlist` */
 
-insert  into `user`(`name`,`userID`,`iphoneNum`,`userPW`,`motto`,`subject`) values ('小赵','001','15224853695','111111','没啥可说的','软件工程'),('小黄','002','25486325951','111111','你好，加油','计算机');
+insert  into `userlist`(`name`,`userID`,`iphoneNum`,`userPW`,`motto`,`subject`) values ('小赵','001','15224853695','111111','没啥可说的','软件工程'),('小黄','002','25486325951','111111','你好，加油','计算机');
 
-/*Table structure for table `zehngzhi` */
+/*Table structure for table `zhengzhi` */
 
-DROP TABLE IF EXISTS `zehngzhi`;
+DROP TABLE IF EXISTS `zhengzhi`;
 
-CREATE TABLE `zehngzhi` (
+CREATE TABLE `zhengzhi` (
   `subject` varchar(10) NOT NULL,
   `content` varchar(200) NOT NULL,
   PRIMARY KEY (`subject`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*Data for the table `zehngzhi` */
+/*Data for the table `zhengzhi` */
 
-insert  into `zehngzhi`(`subject`,`content`) values ('政治中后期复习','肖肖秀荣的形势与政策，肖四肖八，徐涛的背诵小黄书'),('政治前期复习','肖秀荣精讲精练+1000题，至少看三遍，做三遍题');
+insert  into `zhengzhi`(`subject`,`content`) values ('政治中后期复习','肖肖秀荣的形势与政策，肖四肖八，徐涛的背诵小黄书'),('政治前期复习','肖秀荣精讲精练+1000题，至少看三遍，做三遍题'),('考研政治相关','马原部分约占24%、毛概部分约占30%、中国近现代史纲要约占14%、思想道德修养与法律基础约占16%、形势与政策以及当代世界经济与政治约占16%、单项选择题16分(16小题，每小题1分)、多项选择题34分(17小题，每小题2分)、材料分析题50分');
 
 /*Table structure for table `zhuanyeke` */
 
@@ -185,7 +232,7 @@ CREATE TABLE `zhuanyeke` (
 
 /*Data for the table `zhuanyeke` */
 
-insert  into `zhuanyeke`(`subject`,`content`) values ('数据结构','这门课程是统考408初试考试四门专业课科目之一，也是大多数高校考研计算机初试必考科目，可见数据结构这门课在考研计算机初试中的重要地位。这门课程在计算机考研的考试范围中也是非常重要的，而《数据结构》的重点章节是线性表、树、图、查找和排序。参考书目是《数据结构C语言版》《数据结构精讲和习题讲解》（严蔚敏），大家可以结合这两本书进行知识点的学习，和一些习题的练习'),('计算机组成原理','《计算机组成原理》的重点在数据的表示和运算、存储器层次结构、指令系统、中央处理器(CPU)、总线、输入输出(I/O)系统。参考书目是《计算机组成原理(第2版)》(唐朔飞主编)，《计算机组成原理-学习指导与习题解答》。复习时要掌握具体的知识体系，总结出自己的知识框架，多做练习。');
+insert  into `zhuanyeke`(`subject`,`content`) values ('操作系统','《操作系统》的重点在进程管理和内存管理，其次是文件管理和I/O管理。参考书目是《计算机操作系统》(汤子瀛等主编)。注意的是，存储部分、I/O部分和计算机组成原理课程中有重合，可以相互结合着看。虽然这部分知识相对来说没有那么难，但是复习的时候也不能忽视。'),('数据结构','这门课程是统考408初试考试四门专业课科目之一，也是大多数高校考研计算机初试必考科目，可见数据结构这门课在考研计算机初试中的重要地位。这门课程在计算机考研的考试范围中也是非常重要的，而《数据结构》的重点章节是线性表、树、图、查找和排序。参考书目是《数据结构C语言版》《数据结构精讲和习题讲解》（严蔚敏），大家可以结合这两本书进行知识点的学习，和一些习题的练习');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

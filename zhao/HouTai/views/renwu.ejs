@@ -130,7 +130,14 @@
         table tr:nth-child(even) {
             background: #F5FAFA;
         }
-
+        #foot {
+            border-collapse: collapse;
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            margin-left: 60px;
+            margin-top: 10%;
+        }
     </style>
 </head>
 <body>
@@ -176,41 +183,57 @@
                 <thead>
                     <tr>
                         <th>
-                            名称
+                            具体内容
                         </th>
                         <th>
-                            具体内容     
+                            完成时长   
                         </th>
                         <th>
-                            对表格的操作
+                            用户ID   
                         </th>
+                        <th>
+                            是否完成  
+                        </th>
+                        <th id="action">编辑</th>
+                        <!-- <th></th> -->
+                        <th id="action">删除</th>
                     </tr>
                 </thead>
-                <tr>
-                    <td>小孙</td>
-                    <td>英语单词，阅读，作文</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>小孙</td>
-                    <td>专业课题目</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>小孙</td>
-                    <td>背政治</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
+                <tbody id="result"></tbody>
+                <%for(var i=0;i < renwu.length;i++){%>
+                    <tr>
+                        <td>
+                            <%= renwu[i]["content"]%>
+                        </td>
+                        <td>
+                            <%= renwu[i]["time"]%>
+                        </td>
+                        <td>
+                            <%= renwu[i]["userID"]%>
+                        </td>
+                        <td>
+                            <%= renwu[i]["sure"]%>
+                        </td>
+                        <td>
+                        <button>
+                            <!-- <a href="/editB?signId=<%=renwu[i]["signId"]%>"> -->
+                            编辑
+                        </button></td>
+                        <td>
+                                <button>
+                                    <!-- <a href="/delbm?signId=<%=renwu[i]["signId"]%>&&activeId=<%=renwu[i]["activeId"]%>"> -->
+                                    删除
+                                <!-- </a> -->
+                                </button>
+                        </td>
+                    </tr>
+                <%}%>
+                
             </table>
+            <div id="foot">
+                <p style="float: left;" onclick="showAct()">返回上一页</p>
+                <p style="float: right;">确认</p>
+            </div>
         </div>
     </div>
 </body>

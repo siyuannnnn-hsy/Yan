@@ -36,74 +36,57 @@
     <table class="table">
         <thead>
             <tr>
-                <th>
-                    用户ID
-                </th>
-                <th>
-                    登录密码   
-                </th>
-                <th>
-                    手机号
-                </th>
-                <th>
-                    考生年级
-                </th>
-                <th>
-                    编辑表格
-                </th>
+                <!-- <th>活动ID</th> -->
+                <th>用户ID</th>
+                <th>用户名</th>
+                <th>登录密码</th>
+                <th>手机号</th>
+                <th>用户座右铭</th>
+                <th>专业</th>
+                <!-- <th></th> -->
+                <th id="action">编辑</th>
+                <!-- <th></th> -->
+                <th id="action">删除</th>
             </tr>
         </thead>
         <tbody id="result"></tbody>
-        <tr>
-            <td>小张</td>
-            <td>123456</td>
-            <td>13025846925</td>
-            <td>2021</td>
-            <td>
-                <button>编辑</button>
-                <button>删除</button>
-            </td>
-        </tr>
-        <tr>
-            <td>小钱</td>
-            <td>121212</td>
-            <td>13025846925</td>
-            <td>2021</td>
-            <td>
-                <button>编辑</button>
-                <button>删除</button>
-            </td>
-        </tr>
-        <tr>
-            <td>小孙</td>
-            <td>135692</td>
-            <td>13025846925</td>
-            <td>2019</td>
-            <td>
-                <button>编辑</button>
-                <button>删除</button>
-            </td>
-        </tr>
-        <tr>
-            <td>小李</td>
-            <td>125248</td>
-            <td>13025846925</td>
-            <td>2020</td>
-            <td>
-                <button>编辑</button>
-                <button>删除</button>
-            </td>
-        </tr>
-        <tr>
-            <td>小王</td>
-            <td>956324</td>
-            <td>13025846925</td>
-            <td>2020</td>
-            <td>
-                <button>编辑</button>
-                <button>删除</button>
-            </td>
-        </tr>
+        <%for(var i=0;i < userList.length;i++){%>
+            <tr>
+                <td>
+                    <%= userList[i]["userID"]%>
+                </td>
+                <td>
+                    <%= userList[i]["name"]%>
+                </td>
+                <td>
+                    <%= userList[i]["userPW"]%>
+                </td>
+                <td>
+                    <%= userList[i]["iphoneNum"]%>
+                </td>
+                <td>
+                    <%= userList[i]["motto"]%>
+                </td>
+                <td>
+                    <%= userList[i]["subject"]%>
+                </td>
+                <!-- <th></th> -->
+                <th><button>
+                    <!-- <a href="/userList?signId=<%=userList[i]["signId"]%>"> -->
+                    编辑
+                </button></th>
+                
+                <!-- <th></th> -->
+                <td>
+                        <button>
+                            <!-- <a href="/delbm?signId=<%=userList[i]["signId"]%>&&activeId=<%=userList[i]["activeId"]%>"> -->
+                            删除
+                        <!-- </a> -->
+                        </button>
+                </td>
+            </tr>
+        <%}%>
+        
     </table>
 </body>
 <script>

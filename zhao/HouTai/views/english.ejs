@@ -122,7 +122,14 @@
         table tr:nth-child(even) {
             background: #F5FAFA;
         }
-
+        #foot {
+            border-collapse: collapse;
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            margin-left: 60px;
+            margin-top: 10%;
+        }
     </style>
 </head>
 <body>
@@ -170,21 +177,41 @@
                         <th>
                             具体内容    
                         </th>
-                        <th>
-                            对表格的操作
-                        </th>
+                        <th id="action">编辑</th>
+                        <!-- <th></th> -->
+                        <th id="action">删除</th>
                     </tr>
                 </thead>
-                <tr>
-                    <td>英语书籍</td>
-                    <td>红宝书、恋练有词、考研真相、黄皮书、真题超精解、考研英语高分写作、王江涛的考研英语高分写作字帖</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
+                <tbody id="result"></tbody>
+                <%for(var i=0;i < english.length;i++){%>
+                    <tr>
+                        <td>
+                            <%= english[i]["subject"]%>
+                        </td>
+                        <td>
+                            <%= english[i]["content"]%>
+                        </td>
+                        <!-- <th></th> -->
+                        <th><button>
+                            <!-- <a href="/english?signId=<%=english[i]["signId"]%>"> -->
+                            编辑
+                        </button></th>
+                        
+                        <!-- <th></th> -->
+                        <td>
+                                <button>
+                                    <!-- <a href="/delbm?signId=<%=english[i]["signId"]%>&&activeId=<%=english[i]["activeId"]%>"> -->
+                                    删除
+                                <!-- </a> -->
+                                </button>
+                        </td>
+                    </tr>
+                <%}%>
             </table>
-            </table>
+            <div id="foot">
+                <p style="float: left;" onclick="showAct()">返回上一页</p>
+                <p style="float: right;">确认</p>
+            </div>
         </div>
     </div>
 </body>

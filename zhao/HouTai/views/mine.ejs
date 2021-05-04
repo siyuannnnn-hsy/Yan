@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的</title>
-    <style>
+    <title>我的界面</title>
+    <style type="text/css">
         .left{
             height:705px;
             width:300px;
@@ -34,7 +34,7 @@
             background-color:#bebebe;
             border:1px;
         }
-        .mine{
+        .mine0{
             float: left;
             margin-top: 2px;
             height: 90px;
@@ -88,7 +88,7 @@
             <div class="study" onclick="study()">
                 学习
             </div>
-            <div class="mine" onclick="mine()">
+            <div class="mine0">
                 我的
             </div>
             <div class="xiangxi" onclick="xiangxi()">
@@ -104,6 +104,67 @@
                 历史课程
             </div>
         </div>
+        <table  class="table">
+            <thead>
+                <tr>
+                    <!-- <th>活动ID</th> -->
+                    <th>用户ID</th>
+                    <th>用户名</th>
+                    <th>登录密码</th>
+                    <th>手机号</th>
+                    <th>用户座右铭</th>
+                    <th>专业</th>
+                    <!-- <th></th> -->
+                    <th id="action">编辑</th>
+                    <!-- <th></th> -->
+                    <th id="action">删除</th>
+                </tr>
+            </thead>
+
+            <tbody id="result"></tbody>
+            <%for(var i=0;i < userList.length;i++){%>
+                <tr>
+                    <td>
+                        <%= userList[i]["userListID"]%>
+                    </td>
+                    <td>
+                        <%= userList[i]["name"]%>
+                    </td>
+                    <td>
+                        <%= userList[i]["userListPW"]%>
+                    </td>
+                    <td>
+                        <%= userList[i]["iphoneNum"]%>
+                    </td>
+                    <td>
+                        <%= userList[i]["motto"]%>
+                    </td>
+                    <td>
+                        <%= userList[i]["subject"]%>
+                    </td>
+                    <!-- <th></th> -->
+                    <th><button>
+                        <!-- <a href="/userList?signId=<%=userList[i]["signId"]%>"> -->
+                        编辑
+                    </button></th>
+                    
+                    <!-- <th></th> -->
+                    <td>
+                            <button>
+                                <!-- <a href="/delbm?signId=<%=userList[i]["signId"]%>&&activeId=<%=userList[i]["activeId"]%>"> -->
+                                删除
+                            <!-- </a> -->
+                            </button>
+                    </td>
+                </tr>
+            <%}%>
+            
+
+        </table>
+        <div id="foot">
+            <p style="float: left;" onclick="showAct()">返回上一页</p>
+            <p style="float: right;">确认</p>
+        </div>
     </div>
 </body>
 <script>
@@ -113,9 +174,9 @@
     function study() {
         window.location = "http://localhost:3000/study";
     }
-    function mine() {
-        window.location = "http://localhost:3000/mine";
-    }
+    // function mine() {
+    //     window.location = "http://localhost:3000/mine";
+    // }
     function xiangxi() {
         window.location = "http://localhost:3000/xiangxi";
     }

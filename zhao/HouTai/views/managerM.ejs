@@ -40,6 +40,9 @@
                     管理员ID
                 </th>
                 <th>
+                    管理员姓名
+                </th>
+                <th>
                     登录密码   
                 </th>
                 <th>
@@ -54,56 +57,37 @@
             </tr>
         </thead>
         <tbody id="result"></tbody>
-        <tr>
-            <td>小张</td>
-            <td>123456</td>
-            <td>13025846925</td>
-            <td>职员</td>
-            <td>
-                <button>编辑</button>
-                <button>删除</button>
-            </td>
-        </tr>
-        <tr>
-            <td>小钱</td>
-            <td>121212</td>
-            <td>13025846925</td>
-            <td>职员</td>
-            <td>
-                <button>编辑</button>
-                <button>删除</button>
-            </td>
-        </tr>
-        <tr>
-            <td>小孙</td>
-            <td>135692</td>
-            <td>13025846925</td>
-            <td>职员</td>
-            <td>
-                <button>编辑</button>
-                <button>删除</button>
-            </td>
-        </tr>
-        <tr>
-            <td>小李</td>
-            <td>125248</td>
-            <td>13025846925</td>
-            <td>职员</td>
-            <td>
-                <button>编辑</button>
-                <button>删除</button>
-            </td>
-        </tr>
-        <tr>
-            <td>小王</td>
-            <td>956324</td>
-            <td>13025846925</td>
-            <td>职员</td>
-            <td>
-                <button>编辑</button>
-                <button>删除</button>
-            </td>
-        </tr>
+        <%for(var i=0;i < managerList.length;i++){%>
+            <tr>
+                <td>
+                    <%= managerList[i]["managerID"]%>
+                </td>
+                <td>
+                    <%= managerList[i]["Mname"]%>
+                </td>
+                <td>
+                    <%= managerList[i]["PW"]%>
+                </td>
+                <td>
+                    <%= managerList[i]["pNum"]%>
+                </td>
+                <td>
+                    <%= managerList[i]["zhiwei"]%>
+                </td>
+                <td>
+                <button>
+                    <!-- <a href="/editB?signId=<%=managerList[i]["signId"]%>"> -->
+                    编辑
+                </button></td>
+                <td>
+                        <button>
+                            <!-- <a href="/delbm?signId=<%=managerList[i]["signId"]%>&&activeId=<%=managerList[i]["activeId"]%>"> -->
+                            删除
+                        <!-- </a> -->
+                        </button>
+                </td>
+            </tr>
+        <%}%>
     </table>
 </body>
 </html>
