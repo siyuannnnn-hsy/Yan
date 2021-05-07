@@ -3,6 +3,20 @@ import { Tabs, WhiteSpace, Badge } from 'antd-mobile';
 import { NavBar, Icon,WingBlank} from 'antd-mobile';
 import {BrowserRouter as Router,Route,Redirect,Switch, Link} from 'react-router-dom';
 export default class Xinxi extends Component {
+    constructor(props){
+        super(props);
+        // console.log(this.props);
+        this.state={
+            userID:''
+            // dengluId:this.props.match.params.dengluId
+        }
+    }
+    componentDidMount(){
+        console.log(this.props.match.params.userID);
+        this.setState({
+            userID:this.props.match.params.userID
+        })
+    }
     render() {
         return (
             <div>
@@ -13,7 +27,7 @@ export default class Xinxi extends Component {
                     fontSize:'20px',paddingTop:'12px',backgroundColor:'#ffffff'}}
                     icon={<Icon type="left" />}
                     
-                    onLeftClick={() => {window.location='/Mine'}}
+                    onLeftClick={() => {window.location='/Mine/'+this.state.userID}}
                     >详细信息
                 </NavBar>
                 {/* <div className='header' style={{height:'30px',color:'black',

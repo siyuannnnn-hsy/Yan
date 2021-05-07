@@ -16,6 +16,20 @@ const tabs = [
     { title: '专业课', sub: '4' },
   ];
 export default class Study extends Component {
+  constructor(props){
+    super(props);
+    // console.log(this.props);
+    this.state={
+        userID:''
+        // dengluId:this.props.match.params.dengluId
+    }
+}
+componentDidMount(){
+    console.log(this.props.match.params.userID);
+    this.setState({
+        userID:this.props.match.params.userID
+    })
+}
     render() {
         return (
             <div>
@@ -141,13 +155,13 @@ export default class Study extends Component {
       </Tabs>
       <WhiteSpace />
       <footer style={{marginBottom:'0',marginTop:'10px'}}>
-        <Link to={'/'} className='base-footer'>
+        <Link to={'/Home/'+this.state.userID} className='base-footer'>
           <i className="iconfont iconlinggan" style={{fontSize:'30px'}}></i>  
         </Link>
-        <Link to={'/Study'} className='base-footer'>
+        <Link to={'/Study/'+this.state.userID} className='base-footer'>
           <i className="iconfont iconxuexi" style={{fontSize:'30px'}}></i>
         </Link>
-        <Link to={'/Mine'} className='base-footer'>
+        <Link to={'/Mine/'+this.state.userID} className='base-footer'>
           <i className="iconfont iconwode1" style={{fontSize:'30px'}}></i>
         </Link>
         </footer> 

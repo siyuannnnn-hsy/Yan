@@ -1,14 +1,57 @@
 import React, { Component } from 'react'
-import { Carousel } from 'antd-mobile';
+import { Carousel, List } from 'antd-mobile';
 import imgURL from './1.jpg';
-import { SearchBar, Button, WhiteSpace ,Card} from 'antd-mobile';
+// import { List } from 'antd-mobile';
+import { SearchBar, Button, WhiteSpace ,Card,Tabs} from 'antd-mobile';
 import {BrowserRouter as Router,Route,Redirect,Switch, Link} from 'react-router-dom';
 export default class Home extends Component {
-    state = {
-        data: ['1', '2', '3'],
-        imgHeight: 176,
-      }
+    constructor(props){
+        super(props);
+        // console.log(this.props);
+        this.state={
+            data: ['1', '2', '3'],
+            imgHeight: 176,
+            Sname:"",
+            subject:"",
+            content:"",
+            cullingContent:[],
+            num:[],
+            userID:''
+            // dengluId:this.props.match.params.dengluId
+        }
+    }
+    // state = {
+    //     data: ['1', '2', '3'],
+    //     imgHeight: 176,
+    //   }
       componentDidMount() {
+        fetch("http://localhost:8081/listculling")
+        .then((res)=>res.json())
+        .then((res)=>{
+            for(var i=0;i<res.length;i++){
+                    this.setState({
+                        Same:res[i].Sname,
+                        subject:res[i].subject,
+                        content:res[i].content
+                }) 
+                console.log(res[i]);
+                for(var i = 0;i<res.length;i++){
+                    this.setState({
+                        cullingContent:[...this.state.cullingContent,res[i].content],
+                        num:[...this.state.num,i]
+                    })
+                }
+                
+            }
+            // console.log(this.state.culling)
+        })
+
+
+        console.log(this.props.match.params.userID);
+        this.setState({
+            userID:this.props.match.params.userID
+        })
+
         // simulate img loading
         setTimeout(() => {
           this.setState({
@@ -68,33 +111,52 @@ export default class Home extends Component {
                     ))}
                     </Carousel>
                     
-
-
-
                 <WhiteSpace size="lg" />
-                    <Card>
+                    <Card >
                         <Card.Header
                             title="2021考研英语"
                             // thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
                             thumb="https://scpic.chinaz.net/Files/pic/icons128/7877/f1.png"
                             extra={<span>经验分享</span>}
                         />
-                        <Card.Body>
+                        {/* <Tabs> */}
+                        {/* <Card.Body>
                             <div>考完到现在整整一个月啦，在家闲着也是闲着，所以给大家分享自己的备考经验，
                                 经验不一定每个人都适用，但如果我的经验能够对你有所帮助，那也很好啦。
                                 1.关于择校：我是二战跨考生，一战考的一所985综合院校，只招12人（一战头铁），差两分进复试...</div>
-                        </Card.Body>
-                        <Card.Footer content="考研人123456" extra={<div>2021-3-10</div>} />
+                        </Card.Body> */}
+                        {/* <Card.Footer content="考研人123456" extra={<div>2021-3-10</div>} />  */}
+                        
+                            <div>
+                                {
+                                    this.state.num.map((i)=>{
+                                        return(
+                                            <div>
+                                                <Card.Body>
+                                                {this.state.cullingContent[i]}
+                                                <Card.Footer content="考研人123456" extra={<div>2021-3-10</div>} />
+                                                </Card.Body>
+                                            </div>
+                                            
+                                        )
+                                
+                                    })
+                                }
+                                </div>
+                        
+                        
+                        
+                        {/* </Tabs>  */}
                     </Card>
                 <WhiteSpace size="lg" />
-                <footer style={{marginBottom:'0',marginTop:'90px'}}>
-                    <Link to={'/'} className='base-footer'>
+                <footer style={{marginBottom:'0',marginTop:'10px'}}>
+                    <Link to={'/Home/'+this.state.userID} className='base-footer'>
                     <i className="iconfont iconlinggan" style={{fontSize:'30px'}}></i>  
                     </Link>
-                    <Link to={'/Study'} className='base-footer'>
+                    <Link to={'/Study/'+this.state.userID} className='base-footer'>
                     <i className="iconfont iconxuexi" style={{fontSize:'30px'}}></i>
                     </Link>
-                    <Link to={'/Mine'} className='base-footer'>
+                    <Link to={'/Mine/'+this.state.userID} className='base-footer'>
                     <i className="iconfont iconwode1" style={{fontSize:'30px'}}></i>
                     </Link>
                 </footer> 

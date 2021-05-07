@@ -24,16 +24,16 @@ function App() {
         {/* <header>研</header> */}
 
         <section>
-          <Route exact path="/Home" component={Home} exact/>
-          <Route path="/Study" component={Study} exact/>
+          <Route exact path="/Home/:userID" component={Home} exact/>
+          <Route path="/Study/:userID" component={Study} exact/>
           <Route path="/zhuce" component={zhuce} exact/>
           <Route path="/" component={takeIn} exact/>
 
-          <Route path="/Mine" component={Mine} exact/>
-          <Route path="/Mine/Xinxi" component={Xinxi} exact/>
-          <Route path="/Mine/Fenshu" component={Fenshu} exact/>
-          <Route path="/Mine/Dingdan" component={Dingdan} exact/>
-          <Route path="/Mine/Lishi" component={Lishi} exact/>
+          <Route path="/Mine/:userID" component={Mine} exact/>
+          <Route path="/Mine/Xinxi/:userID" component={Xinxi} exact/>
+          <Route path="/Mine/Fenshu/:userID" component={Fenshu} exact/>
+          <Route path="/Mine/Dingdan/:userID" component={Dingdan} exact/>
+          <Route path="/Mine/Lishi/:userID" component={Lishi} exact/>
 
         </section>
 

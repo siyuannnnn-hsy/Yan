@@ -2,6 +2,20 @@ import React, { Component } from 'react';
 import { NavBar, Icon,WingBlank} from 'antd-mobile';
 
 export default class Lishi extends Component {
+    constructor(props){
+        super(props);
+        // console.log(this.props);
+        this.state={
+            userID:''
+            // dengluId:this.props.match.params.dengluId
+        }
+    }
+    componentDidMount(){
+        console.log(this.props.match.params.userID);
+        this.setState({
+            userID:this.props.match.params.userID
+        })
+    }
     render() {
         return (
             <div>
@@ -21,7 +35,7 @@ export default class Lishi extends Component {
                     fontSize:'20px',paddingTop:'12px',backgroundColor:'#ffffff'}}
                     icon={<Icon type="left" />}
                     
-                    onLeftClick={() => {window.location='/Mine'}}
+                    onLeftClick={() => {window.location='/Mine/'+this.state.userID}}
                     >分数统计
                 </NavBar>
                 {/* <div style={}></div> */}

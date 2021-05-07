@@ -3,16 +3,72 @@ import { NavBar, Icon,WingBlank, Button} from 'antd-mobile';
 import {Link,Route} from 'react-router-dom'
 // import AppPetXinxi from './AppPetXinxi';
 var code='PCAE';
+let registerValue="";
 
 export default class AppZhuce extends Component {
     constructor(){
         super();
         this.state={
-            userName:"",
-            userTel:"",
-            userPassword:""
+            data:[],
+            userId:''
         }
     }
+
+    componentDidMount(){
+        // let url = '/userinfo'
+            
+            fetch('http://localhost:8081/listuser')
+                .then((res)=>res.json())
+                .then((res)=>{
+                    console.log(res);
+                    this.setState({
+                        data:res,
+                    })
+                })
+                
+            }
+         checkIn=()=>{
+            var loginname = document.getElementById("userName");
+            var password = document.getElementById("pw");
+            console.log(loginname.value);
+            if(loginname.value!=null){
+                console.log('进入第一层循环');
+                console.log('获得的具体数据有',this.state.data);
+                for(var i=0;i<this.state.data.length;i++){
+                    console.log('进入第er层循环');
+                    if(loginname.value==this.state.data[i].name && password.value==this.state.data[i].userPW){
+                        registerValue = {"userId":this.state.data[i].userId}
+                        this.setState({userId:this.state.data[i].userID})
+                        console.log('进入第3层循环',this.state.userId);
+                        fetch('/listuser', {
+                            method: "POST",
+                            headers: {
+                                "Content-type":"application/json;charset=utf-8",
+                            },
+                            body:JSON.stringify(registerValue) ,
+                       }).then( res => res.text())
+                         .then( data => {
+                             console.log(data);
+                         });
+                       
+                        alert("success!");
+                        window.location = 'http://localhost:3001/Home/:'+this.state.data[i].userID;
+                        // window.location = '/tabb'
+                    }
+                    if(loginname.value===this.state.data[i].userName && password.value!==this.state.data[i].userPassword){
+                        alert("error!");
+                    }
+                    
+                    
+                }
+            }
+            else{
+                alert("未完成验证");
+            }
+            // alert('执行了一部分');
+            console.log(registerValue.userId)
+        }
+
    
      /* 随机验证码 */
      //声明一个变量用于存储生成的验证码
@@ -50,7 +106,7 @@ export default class AppZhuce extends Component {
         {
             //验证码正确(表单提交)
             this.register();
-            window.location='/login';
+            window.location='/';
             return true;
         }
         alert("请输入正确的验证码!");
@@ -84,15 +140,23 @@ export default class AppZhuce extends Component {
                         <input style={{marginLeft:'18px',width:'248px'}} value='小黄'/>
                             
                     </div> */}
-                    <div className='userName' style={{color:'black',marginTop:'28px',marginLeft:'30px',fontSize:'20px'}}>
+                    <div className='userName'
+                     style={{color:'black',marginTop:'28px',marginLeft:'30px',fontSize:'20px'}}>
                         手机号
-                        <input style={{marginLeft:'18px',width:'228px'}} value='12563489523'/>
+                        <input
+                        type='text' 
+                        id='userName' 
+                        name='userName'
+                        style={{marginLeft:'18px',width:'228px'}} placeholder='用户名/手机号'/>
                             {/* 12563489523 */}
                             {/* </input */}
                     </div>
-                    <div className='userName' style={{color:'black',marginTop:'28px',marginLeft:'30px',fontSize:'20px'}}>
+                    <div className='pw'
+                     style={{color:'black',marginTop:'28px',marginLeft:'30px',fontSize:'20px'}}>
                         密码
-                        <input style={{marginLeft:'18px',width:'248px'}} value='123456'/>
+                        <input 
+                        type='password'  id='pw' name='pw'
+                        style={{marginLeft:'18px',width:'248px'}}placeholder='请输入密码'/>
                             {/* 123456 */}
                             {/* </input> */}
                     </div>
@@ -159,9 +223,9 @@ export default class AppZhuce extends Component {
                         <input style={{marginLeft:'18px',width:'215px'}} value='2000.01.01'/>
                            
                     </div> */}
-                    <Link to={'/Home'}>
-                    <Button style={{marginTop:'280px',backgroundColor:'gray'}}>登录</Button>
-                    </Link>
+                    {/* <Link to={'/Home'}> */}
+                    <Button style={{marginTop:'280px',backgroundColor:'gray'}} onClick={this.checkIn}>登录</Button>
+                    {/* </Link> */}
                     <Link to={'/zhuce'}>
                     <Button style={{backgroundColor:'gray'}}>去注册</Button>
                     </Link>

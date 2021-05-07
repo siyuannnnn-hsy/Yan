@@ -8,6 +8,20 @@ const Item = List.Item;
 const Brief = Item.Brief;
 
 export default class Mine extends Component {
+    constructor(props){
+        super(props);
+        // console.log(this.props);
+        this.state={
+            userID:''
+            // dengluId:this.props.match.params.dengluId
+        }
+    }
+    componentDidMount(){
+        console.log(this.props.match.params.userID);
+        this.setState({
+            userID:this.props.match.params.userID
+        })
+    }
     render() {
         return (
             <div>
@@ -21,7 +35,7 @@ export default class Mine extends Component {
                 <List >
                     <Link 
                         to={{
-                            pathname: '/Mine/Xinxi',
+                            pathname: '/Mine/Xinxi/:'+this.state.userID,
                             state: {  // 页面跳转要传递的数据，如下
                                   data1: {},
                                   data2: []
@@ -34,7 +48,7 @@ export default class Mine extends Component {
                     </Link>
                     <Link 
                         to={{
-                            pathname: '/Mine/Fenshu',
+                            pathname: '/Mine/Fenshu/:'+this.state.userID,
                             state: {  // 页面跳转要传递的数据，如下
                                   data1: {},
                                   data2: []
@@ -47,7 +61,7 @@ export default class Mine extends Component {
                     </Link>
                     <Link 
                         to={{
-                            pathname: '/Mine/Dingdan',
+                            pathname: '/Mine/Dingdan/:'+this.state.userID,
                             state: {  // 页面跳转要传递的数据，如下
                                   data1: {},
                                   data2: []
@@ -60,7 +74,7 @@ export default class Mine extends Component {
                     </Link>
                     <Link 
                         to={{
-                            pathname: '/Mine/Lishi',
+                            pathname: '/Mine/Lishi/:'+this.state.userID,
                             state: {  // 页面跳转要传递的数据，如下
                                   data1: {},
                                   data2: []
@@ -81,13 +95,13 @@ export default class Mine extends Component {
                     {/* <Link to='/login'><span style={{color:'#fff'}}>退出</span></Link> */}
                 </List>
                 <footer style={{marginBottom:'0',marginTop:'245px'}}>
-                    <Link to={'/'} className='base-footer'>
+                    <Link to={'/Home/'+this.state.userID} className='base-footer'>
                         <i className="iconfont iconlinggan" style={{fontSize:'30px'}}></i>  
                     </Link>
-                    <Link to={'/Study'} className='base-footer'>
+                    <Link to={'/Study/'+this.state.userID} className='base-footer'>
                         <i className="iconfont iconxuexi" style={{fontSize:'30px'}}></i>
                     </Link>
-                    <Link to={'/Mine'} className='base-footer'>
+                    <Link to={'/Mine/'+this.state.userID} className='base-footer'>
                         <i className="iconfont iconwode1" style={{fontSize:'30px'}}></i>
                     </Link>
                 </footer> 
