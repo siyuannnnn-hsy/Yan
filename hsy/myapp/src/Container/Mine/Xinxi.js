@@ -7,7 +7,14 @@ export default class Xinxi extends Component {
         super(props);
         // console.log(this.props);
         this.state={
-            userID:''
+            userID:'',
+            name:'',
+            Num:'',
+            userPW:'',
+            motto:'',
+            subject:'',
+            num:[],
+            id:''
             // dengluId:this.props.match.params.dengluId
         }
     }
@@ -15,6 +22,37 @@ export default class Xinxi extends Component {
         console.log(this.props.match.params.userID);
         this.setState({
             userID:this.props.match.params.userID
+        })
+
+        fetch("http://localhost:8081/listuser")
+        .then((res)=>res.json())
+        .then((res)=>{
+            for(var i=0;i<res.length;i++){
+                //     this.setState({
+                //         id:res[i].userID,
+                //         name:res[i].name,
+                //         iphoneNum:res[i].iphoneNum,
+                //         userPW:res[i].userPW,
+                //         motto:res[i].motto,
+                //         subject:res[i].subject
+                // }) 
+                // console.log(res[i]);
+                // for(var i = 0;i<res.length;i++){
+                    if(res[i].userID==this.state.userID){
+                        this.setState({
+                            id:res[i].userID,
+                            name:res[i].name,
+                            Num:res[i].iphoneNum,
+                            userPW:res[i].userPW,
+                            motto:res[i].motto,
+                            subject:res[i].subject
+                    }) 
+                    // }
+                }
+                console.log("num"+this.state.Num);
+                
+            }
+            // console.log(this.state.culling)
         })
     }
     render() {
@@ -47,31 +85,35 @@ export default class Xinxi extends Component {
                 <div >
                     <div className='userName' style={{color:'black',marginTop:'28px',marginLeft:'30px',fontSize:'20px'}}>
                         昵称
-                        <input style={{marginLeft:'18px',width:'248px'}} value='小黄'/>
+                        <input style={{marginLeft:'18px',width:'248px'}} value={this.state.name}/>
                             {/* 小黄 */}
                             {/* </input> */}
                     </div>
                     <div className='userName' style={{color:'black',marginTop:'28px',marginLeft:'30px',fontSize:'20px'}}>
                         手机号
-                        <input style={{marginLeft:'18px',width:'228px'}} value='12563489523'/>
+                        {/* <div style={{marginLeft:'18px',width:'228px'}}>
+                        {this.state.iphoneNum}
+                        </div> */}
+                        <input style={{marginLeft:'18px',width:'228px'}} value={this.state.Num}/>
+                        
                             {/* 12563489523 */}
-                            {/* </input */}
+                            {/* </input > */}
                     </div>
                     <div className='userName' style={{color:'black',marginTop:'28px',marginLeft:'30px',fontSize:'20px'}}>
                         密码
-                        <input style={{marginLeft:'18px',width:'248px'}} value='123456'/>
+                        <input style={{marginLeft:'18px',width:'248px'}} value={this.state.userPW}/>
                             {/* 123456 */}
                             {/* </input> */}
                     </div>
                     <div className='userName' style={{color:'black',marginTop:'28px',marginLeft:'30px',fontSize:'20px'}}>
                         座右铭
-                        <input style={{marginLeft:'18px',width:'228px',fontSize:'15px'}} value='这个人很懒，什么也没有留下'/>
+                        <input style={{marginLeft:'18px',width:'228px',fontSize:'15px'}} value={this.state.motto}/>
                             {/* 这个人很懒，什么也没有留下 */}
                             {/* </input> */}
                     </div>
                     <div className='userName' style={{color:'black',marginTop:'28px',marginLeft:'30px',fontSize:'20px'}}>
                         专业
-                        <input style={{marginLeft:'18px',width:'248px'}} value='软件工程'/>
+                        <input style={{marginLeft:'18px',width:'248px'}} placeholder={this.state.subject}/>
                             {/* 软件工程 */}
                             {/* </input> */}
                     </div>

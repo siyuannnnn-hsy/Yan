@@ -81,7 +81,7 @@ app.use('/english',englishList);
 app.use('/zhuanyeke',zhuanyekeList);
 app.use('/study',studyList);
 app.use('/renwu',renwuList);
-app.use('danci',danciList);
+app.use('/danci',danciList);
 app.use('/tiku',tikuList);
 app.use('/qikan',qikanList);
 app.use('/kecheng',kechengList);

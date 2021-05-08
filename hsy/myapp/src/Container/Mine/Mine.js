@@ -35,7 +35,7 @@ export default class Mine extends Component {
                 <List >
                     <Link 
                         to={{
-                            pathname: '/Mine/Xinxi/:'+this.state.userID,
+                            pathname: '/Mine/Xinxi/'+this.state.userID,
                             state: {  // 页面跳转要传递的数据，如下
                                   data1: {},
                                   data2: []
@@ -48,7 +48,7 @@ export default class Mine extends Component {
                     </Link>
                     <Link 
                         to={{
-                            pathname: '/Mine/Fenshu/:'+this.state.userID,
+                            pathname: '/Mine/Fenshu/'+this.state.userID,
                             state: {  // 页面跳转要传递的数据，如下
                                   data1: {},
                                   data2: []
@@ -61,7 +61,7 @@ export default class Mine extends Component {
                     </Link>
                     <Link 
                         to={{
-                            pathname: '/Mine/Dingdan/:'+this.state.userID,
+                            pathname: '/Mine/Dingdan/'+this.state.userID,
                             state: {  // 页面跳转要传递的数据，如下
                                   data1: {},
                                   data2: []
@@ -74,7 +74,7 @@ export default class Mine extends Component {
                     </Link>
                     <Link 
                         to={{
-                            pathname: '/Mine/Lishi/:'+this.state.userID,
+                            pathname: '/Mine/Lishi/'+this.state.userID,
                             state: {  // 页面跳转要传递的数据，如下
                                   data1: {},
                                   data2: []

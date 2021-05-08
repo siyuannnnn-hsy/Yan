@@ -52,7 +52,7 @@ export default class AppZhuce extends Component {
                          });
                        
                         alert("success!");
-                        window.location = 'http://localhost:3001/Home/:'+this.state.data[i].userID;
+                        window.location = 'http://localhost:3001/Home/'+this.state.data[i].userID;
                         // window.location = '/tabb'
                     }
                     if(loginname.value===this.state.data[i].userName && password.value!==this.state.data[i].userPassword){
@@ -224,10 +224,10 @@ export default class AppZhuce extends Component {
                            
                     </div> */}
                     {/* <Link to={'/Home'}> */}
-                    <Button style={{marginTop:'280px',backgroundColor:'gray'}} onClick={this.checkIn}>登录</Button>
+                    <Button style={{marginTop:'270px',backgroundColor:'gray'}} onClick={this.checkIn}>登录</Button>
                     {/* </Link> */}
                     <Link to={'/zhuce'}>
-                    <Button style={{backgroundColor:'gray'}}>去注册</Button>
+                    <Button style={{backgroundColor:'gray',marginTop:'20px'}}>去注册</Button>
                     </Link>
                     </div>
             </div>

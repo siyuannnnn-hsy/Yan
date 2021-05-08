@@ -20,7 +20,15 @@ export default class Study extends Component {
     super(props);
     // console.log(this.props);
     this.state={
-        userID:''
+        userID:'',
+        content:'',
+        contentList:[],
+        num:[],
+        num2:[],
+        tikuList:[],
+        num3:[],
+        qikanSub:[],
+        qikanList:[],
         // dengluId:this.props.match.params.dengluId
     }
 }
@@ -29,13 +37,73 @@ componentDidMount(){
     this.setState({
         userID:this.props.match.params.userID
     })
+
+
+    fetch("http://localhost:8081/listrenwu")
+        .then((res)=>res.json())
+        .then((res)=>{
+            for(var i=0;i<res.length;i++){
+                    this.setState({
+                        content:res[i].content
+                }) 
+                console.log(res[i]);
+                for(var i = 0;i<res.length;i++){
+                    this.setState({
+                        contentList:[...this.state.contentList,res[i].content],
+                        num:[...this.state.num,i]
+                    })
+                }
+                console.log(this.state.contentList)
+                console.log(this.state.num2)
+            }
+            // console.log(this.state.culling)
+        })
+        fetch("http://localhost:8081/listtiku")
+        .then((res)=>res.json())
+        .then((res)=>{
+            for(var i=0;i<res.length;i++){
+                    this.setState({
+                        content:res[i].content
+                }) 
+                console.log(res[i]);
+                for(var i = 0;i<res.length;i++){
+                    this.setState({
+                        tikuList:[...this.state.tikuList,res[i].content],
+                        num2:[...this.state.num2,i]
+                    })
+                }
+                console.log(this.state.tikuList)
+                console.log(this.state.num2)
+            }
+            // console.log(this.state.culling)
+        })
+        fetch("http://localhost:8081/listqikan")
+        .then((res)=>res.json())
+        .then((res)=>{
+            for(var i=0;i<res.length;i++){
+                    this.setState({
+                        content:res[i].content
+                }) 
+                console.log(res[i]);
+                for(var i = 0;i<res.length;i++){
+                    this.setState({
+                      qikanSub:[...this.state.qikanSub,res[i].subject],
+                        qikanList:[...this.state.qikanList,res[i].content],
+                        num3:[...this.state.num3,i]
+                    })
+                }
+                console.log(this.state.tikuList)
+                console.log(this.state.num2)
+            }
+            // console.log(this.state.culling)
+        })
 }
     render() {
         return (
             <div>
               <header>研</header>
       <Tabs tabs={tabs}
-        initialPage={1}
+        // initialPage={1}
         tabBarActiveTextColor={"gray"}
         tabBarInactiveTextColor={'#aaa'}
         onChange={(tab, index) => { console.log('onChange', index, tab); }}
@@ -43,15 +111,16 @@ componentDidMount(){
       >
         <div style={{ display: 'flex',height:'300px',color:'gray', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff'}}>
           {/* 每日任务 */}
-          <div style={{width:'2200px',marginTop:'-200px',float:'left',backgroundColor:'#F5FAFA',height:'40px',fontSize:'15px'}}>
-          学习英语，做阅读积累语感，背作文例句背单词
-          </div>
-          <div style={{width:'2000px',marginTop:'-100px',float:'left',marginLeft:'-385px',backgroundColor:'#F5FAFA',height:'40px',fontSize:'15px'}}>
-          英语单词阅读两个作文
-          </div>
-          <div style={{width:'2000px',float:'left',marginLeft:'-350px',backgroundColor:'#F5FAFA',height:'40px',fontSize:'15px'}}>
-          英语单词阅读两个作文
-          </div>
+          {
+              this.state.num.map((i)=>{
+                return(
+                  <div >
+                    <p>{this.state.contentList[i]}、</p>
+                    {/* <hr></hr> */}
+                  </div>
+                )
+                })
+            }
         </div>
         <div style={{ display: 'flex',height:'300px',color:'gray', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
             <div>
@@ -84,30 +153,19 @@ componentDidMount(){
             </div>
         </div>
         <div style={{ display: 'flex',height:'300px',color:'gray', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
-        <div>
-        <p>
-          1.为解决计算机与打印机之间速度不匹配的问题，通常设置一
-          个打印数据缓冲区，主机将要输出的数据依次写入该缓冲区，而打印机则
-          依次从该缓冲区中取出数据。该缓冲区的逻辑结构应该是
-          </p>
-          <p>
-            A.栈 B.队列 C.树 D.图</p>   
-           <p>
-             2.设栈S和队列Q的初始状态均为空，元素abcdefg依
-             次进入栈S。若每个元素出栈后立即进入队列Q，且7个元素出
-             队的顺序是bdcfeag，则栈S的容量至少是
-             </p>
-          <p>
-              A.1 B.2 C.3 D.4
-             </p>
-          <p>
-          给定二叉树图所示。设N代表二叉树的根，
-          L代表根结点的左子树，R代表根结点的右子树。若遍历后的结点
-          序列为3，1，7，5，6，2，4，则其遍历方式是
-          </p>
-          <p>
-           A.LRN B.NRL C.RLN D.RNL
-          </p>
+        <div style={{marginTop:'20px',backgroundColor: '#fff'}}>
+            {
+              this.state.num2.map((i)=>{
+                return(
+                  <div >
+                    <p>{this.state.num2[i]+1}、{this.state.tikuList[i]}</p>
+                    {/* <hr></hr> */}
+                  </div>
+                )
+                })
+            }
+            
+          
         </div>
                  
         </div>
@@ -124,6 +182,18 @@ componentDidMount(){
                         、文化、实事、摄影等。部分文章经常涉及到自然环境、
                         森林砍伐、环境污染、全球暖化、濒危物种等，一系列的主题充分
                         满足读者对地理探索的好奇心。</p>
+                        <div  style={{backgroundColor:'#fff'}}>
+                        {
+                          this.state.num3.map((i)=>{
+                            return(
+                              <div style={{backgroundColor:'#fff'}}>
+                                <p>{this.state.num3[i]}+1、{this.state.qikanSub[i]}{this.state.qikanList[i]}</p>
+                                {/* <hr></hr> */}
+                              </div>
+                            )
+                            })
+                        }
+                        </div>
             {/* <p></p>
             <p></p> */}
           </div>
