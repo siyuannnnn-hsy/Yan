@@ -57,17 +57,16 @@
     text-align: center;
     padding-top: 15px;
 }
-.input0{
+/* .input0{
     margin-top:-75px;
     height:70px;
     float: left;
     width:400px;
     margin-left: 280px;
-    /* padding-left: 100px; */
     border-radius: 15px;
     background-color: #ffffff;
     font-size: 15px;
-}
+} */
 
 .pw{
     background-color: #bebebe;
@@ -93,16 +92,15 @@
     text-align: center;
     padding-top: 15px;
 }
-.input1{
+/* .input1{
     height:70px;
     float: left;
     width:400px;
     margin-top: -75px;
     margin-left: 280px;
-    /* padding-left: 100px; */
     border-radius: 15px;
     background-color: #ffffff;
-}
+} */
 
 .code{
     background-color: #bebebe;
@@ -209,35 +207,32 @@
         <!-- <div class="input0">
             请输入用户id
         </div> -->
-        <input type="text" name="" id="input0" class="input0" value="请输入用户id">
+        <input type="text" autocomplete="off" placeholder="请输入帐号" class="txt"  id="username" name="username"
+        style="width:400px;margin-top:0px;height:70px;margin-left: 80px;border-radius: 10px;"/>
+        <!-- <input type="text" name="" id="input0" class="input0" value="请输入用户id"> -->
     </div>
     <div class="pw">
         <div class="pw0">
             密码
         </div>
+        <input type="password" autocomplete="off" placeholder="请输入密码" class="txt"  id="pwd" name="pwd"
+        style="width:400px;margin-top:0px;height:70px;margin-left: 80px;border-radius: 10px;"/>
         <!-- <div class="input1">
             请输入密码
         </div> -->
-        <input type="text" name="" id="input1" class="input1" value="请输入密码">
+        <!-- <input type="text" name="" id="input1" class="input1" value="请输入密码"> -->
     </div>
     <div class="code">
         <div class="code0">
             验证码
         </div>
-        <!-- <div class="input2">
-            请输入验证码
-        </div> -->
-        <!-- <input type="text" name="" id="input2" class="input2" value="单行输入">
-        <div class="input3">
-            验证码
-        </div> -->
         <input type="text" id="vcode" placeholder="验证码" >
 		<span id="code" title="看不清，换一张"></span>
 		<span id="vvcode"  title="看不清，换一张" onclick="changeImg()">换一张</span>
     </div>
     <div class="clock">
         <div class="clock1">
-            <button class="BT" onclick="culling()">登录</button>
+            <button class="BT" onclick="check()">登录</button>
         </div>
         <div class="clock2">
             <button class="BT0" onclick="regist()">注册</button>
@@ -249,9 +244,9 @@
   function regist() {
         window.location = "http://localhost:3000/regist";
     }
-    function culling(){
-        window.location ="http://localhost:3000/culling";
-    }
+//     function culling(){
+//         window.location ="http://localhost:3000/culling";
+//     }
     var code='PCAE';//声明一个变量用于存储生成的验证码
 		document.getElementById("code").οnclick=changeImg;
 		function changeImg(){
@@ -282,14 +277,26 @@
 		function check(){
 			//获取用户输入的验证码
 			var input_code=document.getElementById('vcode').value;
+            var username = document.getElementById('username').value;
+            var pwd = document.getElementById('pwd').value;
 			//alert(input_code+"----"+code);
-			if(input_code.toLowerCase()==code.toLowerCase())
+			if(input_code.toLowerCase()==code.toLowerCase() && username!='' && pwd!='')
 			{
 				//验证码正确(表单提交)
+                console.log("this is right");
+                window.location ="http://localhost:3000/culling";
 				return true;
 			}
-			alert("请输入正确的验证码!");
-			
+            if(input_code.toLowerCase()==code.toLowerCase() && username=='' && pwd!=''){
+                alert("请输入用户名");
+            }
+            else if(input_code.toLowerCase()==code.toLowerCase() && username!='' && pwd==''){
+                alert("请输入密码");
+            }
+            else{
+                alert("请输入正确的验证码!");
+            }
+            
 			//验证码不正确,表单不允许提交
 			return false;
 		}

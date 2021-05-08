@@ -190,16 +190,10 @@
                 <%for(var i=0;i < danci.length;i++){%>
                     <tr>
                         <td>
+                            <%= danci[i]["word"]%>
+                        </td>
+                        <td>
                             <%= danci[i]["content"]%>
-                        </td>
-                        <td>
-                            <%= danci[i]["time"]%>
-                        </td>
-                        <td>
-                            <%= danci[i]["userID"]%>
-                        </td>
-                        <td>
-                            <%= danci[i]["sure"]%>
                         </td>
                         <td>
                         <button>
@@ -208,45 +202,12 @@
                         </button></td>
                         <td>
                                 <button>
-                                    <!-- <a href="/delbm?signId=<%=danci[i]["signId"]%>&&activeId=<%=danci[i]["activeId"]%>"> -->
-                                    删除
-                                <!-- </a> -->
+                                        <a href="/deldanci?wordId=<%=danci[i]["wordId"]%>">删除</a>
+                                    </a>
                                 </button>
                         </td>
                     </tr>
                 <%}%>
-                <tr>
-                    <td>accompany</td>
-                    <td>陪伴，伴随</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>accomplish</td>
-                    <td>达到，完成，实现</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>accord</td>
-                    <td>使符合，相一致</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>account</td>
-                    <td>叙述</td>
-                    <td>
-                        <button>编辑</button>
-                        <button>删除</button>
-                    </td>
-                </tr>
             </table>
         </div>
     </div>

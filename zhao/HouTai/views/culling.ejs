@@ -154,9 +154,9 @@
         .container {
             margin-top: 80px;
         }
-        button{
-            /* background-color: #1daea9; */
-        }
+        /* button{
+            background-color: #1daea9;
+        } */
         /* .table{
             margin-top:35px;
             margin-left: 250px;
@@ -235,18 +235,16 @@
                             <%= culling[i]["content"]%>
                         </td>
                         <!-- <th></th> -->
-                        <th><button>
-                            <!-- <a href="/culling?signId=<%=culling[i]["signId"]%>"> -->
-                            编辑
-                        </button></th>
+                        <th>
+                            <button><a href="/editculling?cId=<%=culling[i]["cId"]%>">编辑</a></button>
+                        </th>
                         
                         <!-- <th></th> -->
                         <td>
-                                <button>
-                                    <!-- <a href="/delbm?signId=<%=culling[i]["signId"]%>&&activeId=<%=culling[i]["activeId"]%>"> -->
-                                    删除
-                                <!-- </a> -->
-                                </button>
+                            <button>
+                                <a href="/delculling?cId=<%=culling[i]["cId"]%>">删除</a>
+                            </a>
+                        </button>
                         </td>
                     </tr>
                 <%}%>

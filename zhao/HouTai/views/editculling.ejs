@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>学习</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>精选界面</title>
     <style type="text/css">
-    * {
+        * {
                 margin: 0;
                 padding: 0;
             }
@@ -27,6 +27,38 @@
             margin-top:28px;
             height: 90px;
             width:300px;
+            background-color: blueviolet;
+            border:1px;
+        }
+        .tuijian{
+            float: left;
+            margin-top: 2px;
+            height: 70px;
+            width:300px;
+            background-color: #bebebe;
+            border:1px;
+        }
+        .zhengzhi{
+            float: left;
+            margin-top: 2px;
+            height: 70px;
+            width:300px;
+            background-color: #bebebe;
+            border:1px;
+        }
+        .english{
+            float: left;
+            margin-top: 2px;
+            height: 70px;
+            width:300px;
+            background-color: #bebebe;
+            border:1px;
+        }
+        .zuhanyeke{
+            float: left;
+            margin-top: 2px;
+            height: 70px;
+            width:300px;
             background-color: #bebebe;
             border:1px;
         }
@@ -34,46 +66,6 @@
             float: left;
             margin-top: 2px;
             height: 90px;
-            width:300px;
-            background-color: blueviolet;
-            border:1px;
-        }
-        .renwu{
-            float: left;
-            margin-top: 2px;
-            height: 60px;
-            width:300px;
-            background-color: #bebebe;
-            border:1px;
-        }
-        .danci{
-            float: left;
-            margin-top: 2px;
-            height: 60px;
-            width:300px;
-            background-color: #bebebe;
-            border:1px;
-        }
-        .tiku{
-            float: left;
-            margin-top: 2px;
-            height: 60px;
-            width:300px;
-            background-color: #bebebe;
-            border:1px;
-        }
-        .qikan{
-            float: left;
-            margin-top: 2px;
-            height: 60px;
-            width:300px;
-            background-color: #bebebe;
-            border:1px;
-        }
-        .kecheng{
-            float: left;
-            margin-top: 2px;
-            height: 60px;
             width:300px;
             background-color: #bebebe;
             border:1px;
@@ -86,22 +78,51 @@
             background-color: #bebebe;
             border:1px;
         }
+        .right{
+            float: left;
+            margin-top: -700px;
+            margin-left: 400px;
+        }
+        .header{
+            height:80px;
+            width: 1200px;
+            /* background-color: blueviolet; */
+        }
+        .managerM{
+            height: 80px;
+            width: 200px;
+            float: left;
+            background-color: #bebebe;
+            margin-left: 50px;
+            border-radius: 12px;
+        }
+        .userM{
+            height:80px;
+            width: 200px;
+            margin-left: 800px;
+            float: left;
+            background-color: #bebebe;
+            margin-top:-80px; 
+            border-radius: 12px;
+        }
+
+
         #foot {
             border-collapse: collapse;
             width: 800px;
             margin: 0 auto;
             text-align: center;
-            margin-left: 460px;
+            margin-left: 60px;
             margin-top: 10%;
         }
         table {
             border-collapse: collapse;
             width: 885px;
-            margin-left: 430px;
+            margin-left: 80px;
             /* margin-top:150px; */
             text-align: center;
             display: block;
-            margin-top: -650px;
+            margin-top: 50px;
         }
         table td, table th {
             border: 1px solid #cad9ea;
@@ -133,9 +154,9 @@
         .container {
             margin-top: 80px;
         }
-        button{
-            /* background-color: #1daea9; */
-        }
+        /* button{
+            background-color: #1daea9;
+        } */
         /* .table{
             margin-top:35px;
             margin-left: 250px;
@@ -148,6 +169,15 @@
         .serch0{
             margin-left: 20px;
         } */
+        #divv{
+            width:1200px;
+            height: 120px;
+        }
+        #divv input{
+            width:800px;
+            height: 80px;
+            border-radius: 20px;
+        }
     </style>
 </head>
 <body>
@@ -159,104 +189,52 @@
             <div class="jingxuan" onclick="culling()">
                 精选
             </div>
+            <div class="tuijian" onclick="tuijian()">
+                推荐
+            </div>
+            <div class="zhengzhi" onclick="zhengzhi()">
+                政治
+            </div>
+            <div class="english" onclick="english()">
+                英语
+            </div>
+            <div class="zuhanyeke" onclick="zhuanyeke()">
+                专业课
+            </div>
             <div class="study" onclick="study()">
                 学习
-            </div>
-            <div class="renwu" onclick="renwu()">
-                任务
-            </div>
-            <div class="danci" onclick="danci()">
-                单词
-            </div>
-            <div class="tiku" onclick="tiku()">
-                题库
-            </div>
-            <div class="qikan" onclick="qikan()">
-                期刊
-            </div>
-            <div class="kecheng" onclick="kecheng()">
-                在线课程
             </div>
             <div class="mine" onclick="mine()">
                 我的
             </div>
         </div>
-        <table  class="table">
-            <thead>
-                <tr>
-                    <!-- <th>活动ID</th> -->
-                    <th>学习任务</th>
-                    <th>内容</th>
-                    <th>学科</th>
-                    <!-- <th></th> -->
-                    <th id="action">编辑</th>
-                    <!-- <th></th> -->
-                    <th id="action">删除</th>
-                </tr>
-            </thead>
+        <div class="right">
+            <form class="zhuce" action="/editCullingAcitve?cId=<%=editcullingList[0].cId%>" method="POST">
+                <div class="divv" id="divv">
+                    <h3>名称:</h3>
+                    <input type="text" name="Sname" value=<%=editcullingList[0].Sname%>>
+                </div>
+                <div class="divv" id="divv">
+                    <h3>科目:</h3>
+                    <input type="text" name="subject" value=<%=editcullingList[0].subject%>>
+                </div>
+                <div class="divv" id="divv">
+                    <h3>内容:</h3>
+                    <input type="text" name="content" value=<%=editcullingList[0].content%>>
+                </div>
+                <div class="divv" id="divv">
+                    <h3>推荐ID:</h3>
+                    <input type="text" name="cId" value=<%=editcullingList[0].cId%>>
+                </div>
+                <div><button>确认</button></div>
+                
+            </form>
 
-            <tbody id="result"></tbody>
-            <%for(var i=0;i < study.length;i++){%>
-                <tr>
-                    <td>
-                        <%= study[i]["title"]%>
-                    </td>
-                    <td>
-                        <%= study[i]["content"]%>
-                    </td>
-                    <td>
-                        <%= study[i]["subject"]%>
-                    </td>
-                    </td>
-                    <!-- <th></th> -->
-                    <th><button>
-                        <!-- <a href="/study?signId=<%=study[i]["signId"]%>"> -->
-                        编辑
-                    </button></th>
-                    
-                    <!-- <th></th> -->
-                    <td>
-                        <button>
-                            <a href="/delS?sId=<%=study[i]["sId"]%>">删除</a>
-                        </a>
-                        </button>
-                    </td>
-                </tr>
-            <%}%>
-            
-
-        </table>
-        <div id="foot">
-            <p style="float: left;" onclick="showAct()">返回上一页</p>
-            <p style="float: right;">确认</p>
         </div>
     </div>
 </body>
 <script>
-    function culling() {
-        window.location = "http://localhost:3000/culling";
-    }
-    function study() {
-        window.location = "http://localhost:3000/study";
-    }
-    function renwu() {
-        window.location = "http://localhost:3000/renwu";
-    }
-    function danci() {
-        window.location = "http://localhost:3000/danci";
-    }
-    function tiku() {
-        window.location = "http://localhost:3000/tiku";
-    }
-    function qikan() {
-        window.location = "http://localhost:3000/qikan";
-    }
-    function kecheng() {
-        window.location = "http://localhost:3000/kecheng";
-    }
-    function mine() {
-        window.location = "http://localhost:3000/mine";
-    }
+    
 </script>
 
 </html>

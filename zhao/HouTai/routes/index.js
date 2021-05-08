@@ -480,5 +480,178 @@ router.post('/userM',function(req,res,next){
     })
   })
 
+  router.get('/delculling',function(req,res,next){
+    var cId=req.query.cId;
+    con.query("SET FOREIGN_KEY_CHECKS=0")
+    con.query("delete from culling where cId=?",[cId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+      res.redirect("/culling");
+      }
+    });
+  });
+  router.get('/deldanci',function(req,res,next){
+    var wordId=req.query.wordId;
+    con.query("SET FOREIGN_KEY_CHECKS=0")
+    con.query("delete from danci where wordId=?",[wordId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+      res.redirect("/danci");
+      }
+    });
+  });
+  router.get('/deltuijian',function(req,res,next){
+    var TId=req.query.TId;
+    con.query("SET FOREIGN_KEY_CHECKS=0")
+    con.query("delete from tuijian where TId=?",[TId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+      res.redirect("/tuijian");
+      }
+    });
+  });
+  router.get('/delenglish',function(req,res,next){
+    var EId=req.query.EId;
+    con.query("SET FOREIGN_KEY_CHECKS=0")
+    con.query("delete from english where EId=?",[EId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+      res.redirect("/english");
+      }
+    });
+  });
+  router.get('/delM',function(req,res,next){
+    var managerID=req.query.managerID;
+    con.query("SET FOREIGN_KEY_CHECKS=0")
+    con.query("delete from managerlist where managerID=?",[manaerID],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+      res.redirect("/delM");
+      }
+    });
+  });
+  router.get('/delusers',function(req,res,next){
+    var userID=req.query.userID;
+    con.query("SET FOREIGN_KEY_CHECKS=0")
+    con.query("delete from userlist where userID=?",[userID],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+      res.redirect("/mine");
+      }
+    });
+  });
+  router.get('/delR',function(req,res,next){
+    var Idr=req.query.Idr;
+    con.query("SET FOREIGN_KEY_CHECKS=0")
+    con.query("delete from renwu where Idr=?",[Idr],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+      res.redirect("/renwu");
+      }
+    });
+  });
+  router.get('/delS',function(req,res,next){
+    var sId=req.query.sId;
+    con.query("SET FOREIGN_KEY_CHECKS=0")
+    con.query("delete from study where sId=?",[sId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+      res.redirect("/study");
+      }
+    });
+  });
+  router.get('/delQ',function(req,res,next){
+    var sId=req.query.sId;
+    con.query("SET FOREIGN_KEY_CHECKS=0")
+    con.query("delete from qikan where qId=?",[qId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+      res.redirect("/qikan");
+      }
+    });
+  });
+  router.get('/delT',function(req,res,next){
+    var sId=req.query.sId;
+    con.query("SET FOREIGN_KEY_CHECKS=0")
+    con.query("delete from tiku where tId=?",[tId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+      res.redirect("/tiku");
+      }
+    });
+  });
+  router.get('/delX',function(req,res,next){
+    var userID=req.query.userID;
+    con.query("SET FOREIGN_KEY_CHECKS=0")
+    con.query("delete from userlist where userID=?",[userID],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+      res.redirect("/xiangxi");
+      }
+    });
+  });
+
+  router.get('/editculling', function(req, res, next) {
+    var cId=req.query.cId;
+    con.query("select * from culling where cId=?",[cId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        // console.log(result);
+        res.type('html');
+        res.render('editculling',{editcullingList:result});
+      }
+    })
+  });
+  router.post('/editCullingAcitve',function(req,res,next){
+    var Sname=req.body.Sname;
+    var subject=req.body.subject;
+    var content= req.body.content;
+    var cId=req.body.cId;
+    con.query("insert culling set Sname=?,subject=?,content=?,cId=?",[Sname,subject,content,cId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+        res.type('html');
+        res.redirect("/culling");
+      }
+    })
+  })
 
 module.exports = router;
