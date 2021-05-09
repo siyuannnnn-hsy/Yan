@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>精选界面</title>
+    <title>推荐</title>
     <style type="text/css">
-        * {
-                margin: 0;
-                padding: 0;
-            }
+    * {
+            margin: 0;
+            padding: 0;
+        }
         .left{
             height:705px;
             width:300px;
             background-color: #bebebe;
+            float: left;
         }
         .logo img{
             height:100px;
@@ -27,7 +28,7 @@
             margin-top:28px;
             height: 90px;
             width:300px;
-            background-color: blueviolet;
+            background-color: #bebebe;
             border:1px;
         }
         .tuijian{
@@ -35,7 +36,7 @@
             margin-top: 2px;
             height: 70px;
             width:300px;
-            background-color: #bebebe;
+            background-color: blueviolet;
             border:1px;
         }
         .zhengzhi{
@@ -79,35 +80,19 @@
             border:1px;
         }
         .right{
-            float: left;
-            margin-top: -700px;
-            margin-left: 400px;
+            height:50px;
+            margin-left: 12px;
+            /* background-color: bisque; */
         }
-        .header{
-            height:80px;
-            width: 1200px;
-            /* background-color: blueviolet; */
-        }
-        .managerM{
-            height: 80px;
-            width: 200px;
-            float: left;
-            background-color: #bebebe;
-            margin-left: 50px;
-            border-radius: 12px;
-        }
-        .userM{
-            height:80px;
-            width: 200px;
-            margin-left: 800px;
-            float: left;
-            background-color: #bebebe;
-            margin-top:-80px; 
-            border-radius: 12px;
+        .right p{
+            padding-left: 200px;
+            margin-left: 600px;
+            padding-top:10px;
+            margin-top:10px;
         }
         .table0{
-            margin-top:45px;
-            margin-left: 10px;
+            margin-top:5px;
+            margin-left: 250px;
         }
         .serch{
             margin-left: 220px;
@@ -117,19 +102,10 @@
         .serch0{
             margin-left: 20px;
         }
-
-        #foot {
-            border-collapse: collapse;
-            width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            margin-left: 60px;
-            margin-top: 10%;
-        }
         table {
             border-collapse: collapse;
             width: 885px;
-            margin-left: 80px;
+            margin-left: 400px;
             /* margin-top:150px; */
             text-align: center;
             display: block;
@@ -142,9 +118,7 @@
         }
         table thead th {
             background-color: #CCE8EB;
-            width: 280px;
-            margin-left: 20px;
-            /* padding-left: 200px; */
+            width: 300px;
         }
         table tr:nth-child(odd) {
             background: #fff;
@@ -155,31 +129,25 @@
         #action{
             background-color: #CCE8EB;
             border: 1px solid #eee;
-            /* margin-top:200px; */
-            width: 160px;    
+            width: 260px;    
         }
-        table tr {
-            background: #fff;
-        }
-
         .container {
             margin-top: 80px;
         }
-        /* button{
-            background-color: #1daea9;
-        } */
-        /* .table{
-            margin-top:35px;
-            margin-left: 250px;
+        button{
+            /* background-color: #1daea9; */
         }
-        .serch{
-            margin-left: 20px;
-            width:600px;
-            height: 30px;
+        #foot {
+            border-collapse: collapse;
+            width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            margin-left: 200px;
+            padding-left: 120px;
+            margin-top: 40%;
         }
-        .serch0{
-            margin-left: 20px;
-        } */
+        
+
     </style>
 </head>
 <body>
@@ -211,76 +179,97 @@
             </div>
         </div>
         <div class="right">
-            <div class="header">
-                <div class="managerM" onclick="manager()">
-                    管理员信息
-                </div>
-                <div class="userM" onclick="user()">
-                    用户信息
-                </div>
+            <p>关于推荐的表格</p>
+            <div class="table0">
+                
+                <input type="text" class="serch">
+                <button class="serch0" onclick="searchTuijian()">
+                    查询
+                </button>
             </div>
             <table  class="table">
-                <div class="table0">
-                    <input type="text" class="serch">
-                    <button class="serch0" onclick="searchCulling()">
-                        查询
-                    </button>
-                </div>
                 <thead>
                     <tr>
                         <!-- <th>活动ID</th> -->
-                        <th>注意事项</th>
-                        <th>科目</th>
-                        <th>相关内容</th>
-                        <!-- <th></th> -->
+                        <th>名称</th>
+                        <th>具体内容</th>
                         <th id="action">编辑</th>
                         <!-- <th></th> -->
                         <th id="action">删除</th>
                     </tr>
                 </thead>
-    
                 <tbody id="result"></tbody>
-                <%for(var i=0;i < culling.length;i++){%>
+                <%for(var i=0;i < 1;i++){%>
                     <tr>
                         <td>
-                            <%= culling[i]["Sname"]%>
+                            <%= tuijian[i]["Tname"]%>
                         </td>
                         <td>
-                            <%= culling[i]["subject"]%>
+                            <%= tuijian[i]["content"]%>
                         </td>
-                        <td>
-                            <%= culling[i]["content"]%>
-                        </td>
-                        <!-- <th></th> -->
                         <th>
-                            <button><a href="/editculling?cId=<%=culling[i]["cId"]%>">编辑</a></button>
+                            <button><a href="/edittuijian?TId=<%=tuijian[i]["TId"]%>">编辑</a></button>
                         </th>
-                        
-                        <!-- <th></th> -->
                         <td>
                             <button>
-                                <a href="/delculling?cId=<%=culling[i]["cId"]%>">删除</a>
+                                <a href="/deltuijian?TId=<%=tuijian[i]["TId"]%>">删除</a>
                             </a>
-                        </button>
+                            </button>
                         </td>
                     </tr>
                 <%}%>
                 
-    
+                <!-- <tr>
+                    <td>英语书籍</td>
+                    <td>红宝书、恋练有词、考研真相、黄皮书、真题超精解、考研英语高分写作、王江涛的考研英语高分写作字帖</td>
+                    <td>
+                        <button>编辑</button>
+                        <button>删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>考研政治</td>
+                    <td>肖秀荣《1000题》、肖秀荣《知识点精讲精练》、肖秀荣《命题冲刺8套卷》、肖秀荣《命题终极预测4套卷》、徐涛20题</td>
+                    <td>
+                        <button>编辑</button>
+                        <button>删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>考研数学</td>
+                    <td>李永乐、王式安考研数学复习全书、张宇36讲、张宇1000题、张宇真题大全讲、合工大五套卷、高数18讲</td>
+                    <td>
+                        <button>编辑</button>
+                        <button>删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>考研专业课</td>
+                    <td>专业课复习并没有太多的方法论，就是一个很简单的事，书读百遍，其义自见。</td>
+                    <td>
+                        <button>编辑</button>
+                        <button>删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>考研建议</td>
+                    <td>不要着急！考研和高考一样，就是一场考试。考试最重要的就是弄懂所有知识点，然后在考场上多做几道题。而你在接下来的一年里需要做的无非就是好好学习，天天向上罢了。</td>
+                    <td>
+                        <button>编辑</button>
+                        <button>删除</button>
+                    </td>
+                </tr> -->
             </table>
-            <div id="foot">
-                <p style="float: left;" onclick="showAct()">返回上一页</p>
-                <p style="float: right;">确认</p>
-            </div>
+        </div>
+        <div id="foot">
+            <p style="float: left;" onclick="showAct()">返回上一页</p>
+            <p style="float: right;">确认</p>
         </div>
     </div>
 </body>
 <script>
     function culling() {
         window.location = "http://localhost:3000/culling";
-    }
-    function searchCulling() {
-        window.location = "http://localhost:3000/searchCulling";
     }
     function tuijian() {
         window.location = "http://localhost:3000/tuijian";
@@ -299,12 +288,6 @@
     }
     function mine() {
         window.location = "http://localhost:3000/mine";
-    }
-    function manager(){
-        window.location = "http://localhost:3000/managerM"
-    }
-    function user(){
-        window.location = "http://localhost:3000/userM"
     }
 </script>
 

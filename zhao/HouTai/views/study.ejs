@@ -133,7 +133,19 @@
         .container {
             margin-top: 80px;
         }
-        button{
+        .table0{
+            margin-top:45px;
+            margin-left: 10px;
+        }
+        .serch{
+            margin-left: 220px;
+            width:600px;
+            height: 30px;
+        }
+        .serch0{
+            margin-left: 20px;
+        }
+        .button{
             /* background-color: #1daea9; */
         }
         /* .table{
@@ -181,7 +193,9 @@
                 我的
             </div>
         </div>
+        
         <table  class="table">
+            
             <thead>
                 <tr>
                     <!-- <th>活动ID</th> -->
@@ -207,8 +221,6 @@
                     <td>
                         <%= study[i]["subject"]%>
                     </td>
-                    <!-- </td> -->
-                    <!-- <th></th> -->
                     <th>
                         <button><a href="/editstudy?sId=<%=study[i]["sId"]%>">编辑</a></button>
                     </th>

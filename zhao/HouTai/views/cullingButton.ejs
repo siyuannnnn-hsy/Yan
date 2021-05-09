@@ -222,7 +222,7 @@
             <table  class="table">
                 <div class="table0">
                     <input type="text" class="serch">
-                    <button class="serch0" onclick="searchCulling()">
+                    <button class="serch0">
                         查询
                     </button>
                 </div>
@@ -240,7 +240,7 @@
                 </thead>
     
                 <tbody id="result"></tbody>
-                <%for(var i=0;i < culling.length;i++){%>
+                <%for(var i=0;i < 1;i++){%>
                     <tr>
                         <td>
                             <%= culling[i]["Sname"]%>
@@ -278,9 +278,6 @@
 <script>
     function culling() {
         window.location = "http://localhost:3000/culling";
-    }
-    function searchCulling() {
-        window.location = "http://localhost:3000/searchCulling";
     }
     function tuijian() {
         window.location = "http://localhost:3000/tuijian";

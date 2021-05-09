@@ -211,16 +211,54 @@ componentDidMount(){
         renderTab={tab => <span>{tab.title}</span>}
       >
         <div style={{ display: 'flex',height:'250px',color:'gray', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fff' }}>
-          数学
+        <div style={{marginLeft:'12px',paddingLeft:'12px'}}>
+          <p>考研数学课程：https://www.zhihu.com/question/22527928/answer/483265838</p>
+          <p>数学网页网：https://www.jncmzs.com/8265.html</p>
+          <p>恒星数学：http://www.hxen.com/englishvideo/yanjiang/</p>
+          <p>考研数学一:https://kaoyan.koolearn.com/zt/pinpai-1-4545/</p>
+          <p>数学解题视频： http://v.koolearn.com/20141111/27.html</p>
+          </div>
+
+
+
+
         </div>
         <div style={{ display: 'flex',height:'250px',color:'gray', alignItems: 'center', justifyContent: 'center',  backgroundColor: '#fff' }}>
-          英语
+       <div>
+       <p>佳妮英评网：https://www.jncmzs.com/8265.html</p>
+        <p>恒星英语：http://www.hxen.com/englishvideo/yanjiang/</p>
+        <p>考研英语一:https://kaoyan.koolearn.com/zt/pinpai-1-4545/</p>
+        <p>英语作文视频： http://v.koolearn.com/20141111/27.html</p>
+       </div>
+        
+
+
+
+        </div>
+        <div style={{ display: 'flex',height:'250px',color:'gray', alignItems: 'center', justifyContent: 'center',  backgroundColor: '#fff'}}>
+        <div style={{marginLeft:'12px',paddingLeft:'12px'}}>
+          <p>考研政治课程：https://www.zhihu.com/question/22527928/answer/483265838</p>
+          <p>课程网页：https://www.jncmzs.com/8265.html</p>
+          <p>恒星政治：http://www.hxen.com/englishvideo/yanjiang/</p>
+          <p>考研政治:https://kaoyan.koolearn.com/zt/pinpai-1-4545/</p>
+          <p>政治视频： http://v.koolearn.com/20141111/27.html</p>
+          </div>
+          
+
+
         </div>
         <div style={{ display: 'flex',height:'250px',color:'gray', alignItems: 'center', justifyContent: 'center',  backgroundColor: '#fff' }}>
-          政治
-        </div>
-        <div style={{ display: 'flex',height:'250px',color:'gray', alignItems: 'center', justifyContent: 'center',  backgroundColor: '#fff' }}>
-          专业课
+        <div style={{marginLeft:'12px',paddingLeft:'12px'}}>
+          <p>专业课课程：https://www.zhihu.com/question/22527928/answer/483265838</p>
+          <p>课程网页：https://www.jncmzs.com/8265.html</p>
+          <p>专业课：http://www.hxen.com/englishvideo/yanjiang/</p>
+          <p>专业课:https://kaoyan.koolearn.com/zt/pinpai-1-4545/</p>
+          <p>专业课视频： http://v.koolearn.com/20141111/27.html</p>
+          </div>
+
+
+
+
         </div>
       </Tabs>
       <WhiteSpace />

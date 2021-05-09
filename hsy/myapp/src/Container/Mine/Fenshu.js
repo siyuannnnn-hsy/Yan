@@ -45,24 +45,24 @@ export default class Fenshu extends Component {
                         <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}>日期</td>
                     </tr>
                     <tr style={{width:'600px',fontSize:'20px'}}>
-                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}></td>
-                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}></td>
-                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}></td>
+                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}>英语</td>
+                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}>60</td>
+                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}>2021.03.30</td>
                     </tr>
                     <tr style={{width:'600px',fontSize:'20px'}}>
-                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}></td>
-                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}></td>
-                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}></td>
+                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}>数学</td>
+                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}>90</td>
+                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}>2021.04.21</td>
                     </tr>
                     <tr style={{width:'600px',fontSize:'20px'}}>
-                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}></td>
-                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}></td>
-                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}></td>
+                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}>专业课</td>
+                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}>90</td>
+                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}>2021.03.03</td>
                     </tr>
                     <tr style={{width:'600px',fontSize:'20px'}}>
-                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}></td>
-                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}></td>
-                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}></td>
+                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}>数学</td>
+                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}>92</td>
+                        <td style={{width:'100px',height:'30px', border: '1px solid #cad9ea',paddingLeft:'40px'}}>2021.04.02</td>
                     </tr>
                 </div>
             </div>

@@ -41,6 +41,32 @@ router.get('/culling', function(req, res, next) {
     }
   });
 });
+router.get('/searchCulling', function(req, res, next) {
+  con.query("select * from culling",function(err,result){
+    if(err){
+      console.log(err);
+    }
+    else{
+      res.type('html');
+      res.render("cullingButton",{culling:result});
+      console.log('执行的第38行');
+      // console.log(result);
+    }
+  });
+});
+router.get('/searchTuijian', function(req, res, next) {
+  con.query("select * from tuijian",function(err,result){
+    if(err){
+      console.log(err);
+    }
+    else{
+      res.type('html');
+      res.render("searchTuijian",{tuijian:result});
+      console.log('执行的第38行');
+      // console.log(result);
+    }
+  });
+});
 router.post('/culling',function(req,res,next){
   var search_result = JSON.stringify(req.body.search_Dongtai).slice(1,-1);
   console.log(search_result);
