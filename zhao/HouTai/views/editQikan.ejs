@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>背单词</title>
-    <style>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>精选界面</title>
+    <style type="text/css">
         .left{
             height:705px;
             width:300px;
@@ -48,7 +48,7 @@
             margin-top: 2px;
             height: 60px;
             width:300px;
-            background-color: blueviolet;
+            background-color: #bebebe;
             border:1px;
         }
         .tiku{
@@ -64,7 +64,7 @@
             margin-top: 2px;
             height: 60px;
             width:300px;
-            background-color: #bebebe;
+            background-color: blueviolet;
             border:1px;
         }
         .kecheng{
@@ -130,7 +130,15 @@
         table tr:nth-child(even) {
             background: #F5FAFA;
         }
-
+        #divv{
+            width:1200px;
+            height: 120px;
+        }
+        #divv input{
+            width:800px;
+            height: 80px;
+            border-radius: 20px;
+        }
     </style>
 </head>
 <body>
@@ -164,78 +172,34 @@
                 我的
             </div>
         </div>
+        </div>
         <div class="right">
-            <p>关于背单词的表格</p>
-            <div class="table0">
-                <input type="text" class="serch">
-                <button class="serch0">
-                    查询
-                </button>
-            </div>
-            <table  class="table">
-                <thead>
-                    <tr>
-                        <th>
-                            名称
-                        </th>
-                        <th>
-                            具体内容    
-                        </th>
-                        <th id="action">编辑</th>
-                        <!-- <th></th> -->
-                        <th id="action">删除</th>
-                    </tr>
-                </thead>
-                <tbody id="result"></tbody>
-                <%for(var i=0;i < danci.length;i++){%>
-                    <tr>
-                        <td>
-                            <%= danci[i]["word"]%>
-                        </td>
-                        <td>
-                            <%= danci[i]["content"]%>
-                        </td>
-                        <td>
-                            
-                                <button><a href="/editdanci?wordId=<%=danci[i]["wordId"]%>">编辑</a></button>
-                            
-                        <td>
-                                <button>
-                                        <a href="/deldanci?wordId=<%=danci[i]["wordId"]%>">删除</a>
-                                    </a>
-                                </button>
-                        </td>
-                    </tr>
-                <%}%>
-            </table>
+            <form class="zhuce" action="/editQikanAcitve?qId=<%=editQikanList[0].qId%>" method="POST">
+                <div class="divv" id="divv">
+                    <h3>书名:</h3>
+                    <input type="text" name="word" value=<%=editQikanList[0].subject%>>
+                </div>
+                <div class="divv" id="divv">
+                    <h3>内容:</h3>
+                    <input type="text" name="content" value=<%=editQikanList[0].content%>>
+                </div>
+                <div class="divv" id="divv">
+                    <h3>用户ID:</h3>
+                    <input type="text" name="userID" value=<%=editQikanList[0].userID%>>
+                </div>
+                <div class="divv" id="divv">
+                    <h3>期刊ID:</h3>
+                    <input type="text" name="wordId" value=<%=editQikanList[0].qId%>>
+                </div>
+                <div><button>确认</button></div>
+                
+            </form>
+
         </div>
     </div>
 </body>
 <script>
-    function culling() {
-        window.location = "http://localhost:3000/culling";
-    }
-    function study() {
-        window.location = "http://localhost:3000/study";
-    }
-    function renwu() {
-        window.location = "http://localhost:3000/renwu";
-    }
-    function danci() {
-        window.location = "http://localhost:3000/danci";
-    }
-    function tiku() {
-        window.location = "http://localhost:3000/tiku";
-    }
-    function qikan() {
-        window.location = "http://localhost:3000/qikan";
-    }
-    function kecheng() {
-        window.location = "http://localhost:3000/kecheng";
-    }
-    function mine() {
-        window.location = "http://localhost:3000/mine";
-    }
+    
 </script>
 
 </html>

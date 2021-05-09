@@ -652,6 +652,362 @@ router.post('/userM',function(req,res,next){
         res.redirect("/culling");
       }
     })
+  });
+  router.get('/editdanci', function(req, res, next) {
+    var wordId=req.query.wordId;
+    con.query("select * from danci where wordId=?",[wordId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        // console.log(result);
+        res.type('html');
+        res.render('editdanci',{editDanciList:result});
+      }
+    })
+  });
+  router.post('/editDanciAcitve',function(req,res,next){
+    var word=req.body.word;
+    var content=req.body.content;
+    var userID= req.body.userID;
+    var wordId=req.body.wordId;
+    con.query("insert danci set word=?,content=?,userID=?,wordId=?",[word,content,userID,wordId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+        res.type('html');
+        res.redirect("/danci");
+      }
+    })
+  })
+
+  router.get('/editenglish', function(req, res, next) {
+    var EId=req.query.EId;
+    con.query("select * from english where EId=?",[EId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        // console.log(result);
+        res.type('html');
+        res.render('editenglish',{editEnglishList:result});
+      }
+    })
+  });
+  router.post('/editEnglishAcitve',function(req,res,next){
+    var subject=req.body.subject;
+    var content=req.body.content;
+    var EId=req.body.EId;
+    con.query("insert english set subject=?,content=?,EId=?",[word,content,EId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+        res.type('html');
+        res.redirect("/english");
+      }
+    })
+  })
+  router.get('/editManager', function(req, res, next) {
+    var managerID=req.query.managerID;
+    con.query("select * from managerlist where managerID=?",[managerID],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        // console.log(result);
+        res.type('html');
+        res.render('editManager',{editManagerList:result});
+      }
+    })
+  });
+  router.post('/editManagerAcitve',function(req,res,next){
+    var Mname=req.body.Mname;
+    var managerID=req.body.managerID;
+    var PW=req.body.PW;
+    var pNum=req.body.pNum;
+    var zhiwei=req.body.zhiwei;
+    con.query("insert managerrlist set Mname=?,managerID=?,PW=?,pNum=?,zhiwei=?",[Mname,managerID,PW,pNum,zhiwei],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+        res.type('html');
+        res.redirect("/managerM");
+      }
+    })
+  })
+  router.get('/editqikan', function(req, res, next) {
+    var qId=req.query.qId;
+    con.query("select * from qikan where EId=?",[qId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        // console.log(result);
+        res.type('html');
+        res.render('editQikan',{editQikanList:result});
+      }
+    })
+  });
+  router.post('/editQikanAcitve',function(req,res,next){
+    var subject=req.body.subject;
+    var content=req.body.content;
+    var userID=req.body.userID;
+    var qId=req.body.qId;
+    con.query("insert english set subject=?,content=?,userID=?,qId=?",[word,content,userID,qId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+        res.type('html');
+        res.redirect("/qikan");
+      }
+    })
+  })
+  router.get('/editrenwu', function(req, res, next) {
+    var Idr=req.query.Idr;
+    con.query("select * from renwu where Idr=?",[Idr],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        // console.log(result);
+        res.type('html');
+        res.render('editrenwu',{editRenwuList:result});
+      }
+    })
+  });
+  router.post('/editRenwuAcitve',function(req,res,next){
+    
+    var content=req.body.content;
+    var time=req.body.time;
+    var sure=req.body.sure;
+    var userID=req.body.userID;
+    var Idr=req.body.Idr;
+    con.query("insert english set content=?,time=?,sure=?,userID=?,Idr=?",[content,time,sure,userID,Idr],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+        res.type('html');
+        res.redirect("/renwu");
+      }
+    })
+  })
+  router.get('/edittiku', function(req, res, next) {
+    var tId=req.query.tId;
+    con.query("select * from tiku where tId=?",[tId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        // console.log(result);
+        res.type('html');
+        res.render('edittiku',{editTikuList:result});
+      }
+    })
+  });
+  router.post('/editTikuEnglishAcitve',function(req,res,next){
+    var tId=req.body.tId;
+    var subject=req.body.subject;
+    var content=req.body.content;
+    var userID=req.body.userID;
+    var qnswer=req.body.answer;
+    con.query("insert tiku set subject=?,content=?,answer=?,userID=?,tId=?",[subject,content,answer,userID,tId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+        res.type('html');
+        res.redirect("/tiku");
+      }
+    })
+  })
+  router.get('/editTuijian', function(req, res, next) {
+    var TId=req.query.TId;
+    con.query("select * from tuijian where TId=?",[TId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        // console.log(result);
+        res.type('html');
+        res.render('edittuijian',{editTuijianList:result});
+      }
+    })
+  });
+  router.post('/editTuijianAcitve',function(req,res,next){
+    var subject=req.body.subject;
+    var content=req.body.content;
+    var Tname=req.body.Tname;
+    var TId=req.body.TId;
+    con.query("insert tuijian set subject=?,content=?,Tname=?,TId=?",[subject,content,Tname,TId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+        res.type('html');
+        res.redirect("/tuijian");
+      }
+    })
+  })
+  router.get('/edituser', function(req, res, next) {
+    var userID=req.query.userID;
+    con.query("select * from userlist where userID=?",[userID],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        // console.log(result);
+        res.type('html');
+        res.render('edituser',{editUserList:result});
+      }
+    })
+  });
+  router.post('/editUserAcitve',function(req,res,next){
+    var subject=req.body.subject;
+    var name=req.body.name;
+    var userID=req.body.userID;
+    var iphoneNum=req.body.iphoneNum;
+    var userPW=req.body.userPW;
+    var motto=req.body.motto;
+    con.query("insert userlist set subject=?,name=?,userID=?,iphoneNUm=?,userPW=?,motto=?",[subject,name,userID,iphoneNum,userPW,motto],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+        res.type('html');
+        res.redirect("/userM");
+      }
+    })
+  })
+  router.get('/editXiangxi', function(req, res, next) {
+    var userID=req.query.userID;
+    con.query("select * from userlist where userID=?",[userID],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        // console.log(result);
+        res.type('html');
+        res.render('editXiangxi',{editXiangxiList:result});
+      }
+    })
+  });
+  router.post('/editXiangxiAcitve',function(req,res,next){
+    var subject=req.body.subject;
+    var name=req.body.name;
+    var userID=req.body.userID;
+    var iphoneNum=req.body.iphoneNum;
+    var userPW=req.body.userPW;
+    var motto=req.body.motto;
+    con.query("insert userlist set subject=?,name=?,userID=?,iphoneNUm=?,userPW=?,motto=?",[subject,name,userID,iphoneNum,userPW,motto],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+        res.type('html');
+        res.redirect("/xiangxi");
+      }
+    })
+  })
+  router.get('/editzhengzhi', function(req, res, next) {
+    var zId=req.query.zId;
+    con.query("select * from zhengzhi where zId=?",[zId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        // console.log(result);
+        res.type('html');
+        res.render('editzhengzhi',{editZhengzhiList:result});
+      }
+    })
+  });
+  router.post('/editZhengzhiAcitve',function(req,res,next){
+    var subject=req.body.subject;
+    var content=req.body.content;
+    var zId=req.body.zId;
+    con.query("insert english set subject=?,content=?,zId=?",[word,content,zId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+        res.type('html');
+        res.redirect("/zhengzhi");
+      }
+    })
+  })
+  router.get('/editzhuanye', function(req, res, next) {
+    var zId=req.query.zId;
+    con.query("select * from zhuangyeke where zId=?",[zId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        // console.log(result);
+        res.type('html');
+        res.render('editzhuanye',{editZhuanyeList:result});
+      }
+    })
+  });
+  router.post('/editZhuanyeAcitve',function(req,res,next){
+    var subject=req.body.subject;
+    var content=req.body.content;
+    var zId=req.body.zId;
+    con.query("insert zhuanyeke set subject=?,content=?,zId=?",[word,content,zId],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+        res.type('html');
+        res.redirect("/zhuanyeke");
+      }
+    })
+  })
+  router.get('/editMine', function(req, res, next) {
+    var userID=req.query.userID;
+    con.query("select * from userlist where userID=?",[userID],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        // console.log(result);
+        res.type('html');
+        res.render('editMine',{editMineList:result});
+      }
+    })
+  });
+  router.post('/editMineAcitve',function(req,res,next){
+    var subject=req.body.subject;
+    var name=req.body.name;
+    var userID=req.body.userID;
+    var iphoneNum=req.body.iphoneNum;
+    var userPW=req.body.userPW;
+    var motto=req.body.motto;
+    con.query("insert userlist set subject=?,name=?,userID=?,iphoneNUm=?,userPW=?,motto=?",[subject,name,userID,iphoneNum,userPW,motto],function(err,result){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log(result);
+        res.type('html');
+        res.redirect("/mine");
+      }
+    })
   })
 
 module.exports = router;

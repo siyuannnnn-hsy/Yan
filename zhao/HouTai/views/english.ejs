@@ -191,13 +191,9 @@
                         <td>
                             <%= english[i]["content"]%>
                         </td>
-                        <!-- <th></th> -->
-                        <th><button>
-                            <!-- <a href="/english?signId=<%=english[i]["signId"]%>"> -->
-                            编辑
-                        </button></th>
-                        
-                        <!-- <th></th> -->
+                        <th>
+                            <button><a href="/editenglish?EId=<%=english[i]["EId"]%>">编辑</a></button>
+                        </th>
                         <td>
                             <button>
                                 <a href="/delEnglish?EId=<%=english[i]["EId"]%>">删除</a>

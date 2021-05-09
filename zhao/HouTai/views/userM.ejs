@@ -50,38 +50,35 @@
             </tr>
         </thead>
         <tbody id="result"></tbody>
-        <%for(var i=0;i < userList.length;i++){%>
+        <%for(var i=0;i < userlist.length;i++){%>
             <tr>
                 <td>
-                    <%= userList[i]["userID"]%>
+                    <%= userlist[i]["userID"]%>
                 </td>
                 <td>
-                    <%= userList[i]["name"]%>
+                    <%= userlist[i]["name"]%>
                 </td>
                 <td>
-                    <%= userList[i]["userPW"]%>
+                    <%= userlist[i]["userPW"]%>
                 </td>
                 <td>
-                    <%= userList[i]["iphoneNum"]%>
+                    <%= userlist[i]["iphoneNum"]%>
                 </td>
                 <td>
-                    <%= userList[i]["motto"]%>
+                    <%= userlist[i]["motto"]%>
                 </td>
                 <td>
-                    <%= userList[i]["subject"]%>
+                    <%= userlist[i]["subject"]%>
                 </td>
                 <!-- <th></th> -->
-                <th><button>
-                    <!-- <a href="/userList?signId=<%=userList[i]["signId"]%>"> -->
-                    编辑
-                </button></th>
+                <th>
+                    <button><a href="">编辑</a></button>
+                </th>
                 
                 <!-- <th></th> -->
                 <td>
                         <button>
-                            <!-- <a href="/delbm?signId=<%=userList[i]["signId"]%>&&activeId=<%=userList[i]["activeId"]%>"> -->
-                            <a>删除</a>
-                        <!-- </a> -->
+                            <a href="">删除</a>
                         </button>
                 </td>
             </tr>

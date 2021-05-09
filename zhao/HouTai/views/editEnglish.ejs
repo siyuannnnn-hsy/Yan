@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>政治</title>
-    <style>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>精选界面</title>
+    <style type="text/css">
         .left{
             height:705px;
             width:300px;
@@ -40,7 +40,7 @@
             margin-top: 2px;
             height: 70px;
             width:300px;
-            background-color: blueviolet;
+            background-color: #bebebe;
             border:1px;
         }
         .english{
@@ -48,7 +48,7 @@
             margin-top: 2px;
             height: 70px;
             width:300px;
-            background-color: #bebebe;
+            background-color: blueviolet;
             border:1px;
         }
         .zuhanyeke{
@@ -64,7 +64,7 @@
             margin-top: 2px;
             height: 90px;
             width:300px;
-            background-color: b#bebebe;
+            background-color: #bebebe;
             border:1px;
         }
         .mine{
@@ -122,9 +122,23 @@
         table tr:nth-child(even) {
             background: #F5FAFA;
         }
-        /* #foot {
-            margin-left: -500px;
-        } */
+        #foot {
+            border-collapse: collapse;
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            margin-left: 60px;
+            margin-top: 10%;
+        }
+        #divv{
+            width:1200px;
+            height: 120px;
+        }
+        #divv input{
+            width:800px;
+            height: 80px;
+            border-radius: 20px;
+        }
     </style>
 </head>
 <body>
@@ -155,77 +169,30 @@
                 我的
             </div>
         </div>
+        </div>
         <div class="right">
-            <p>关于政治的表格</p>
-            <div class="table0">
-                <input type="text" class="serch">
-                <button class="serch0">
-                    查询
-                </button>
-            </div>
-            <table  class="table">
-                <thead>
-                    <tr>
-                        <th>
-                            名称
-                        </th>
-                        <th>
-                            具体内容     
-                        </th>
-                        <th id="action">编辑</th>
-                        <!-- <th></th> -->
-                        <th id="action">删除</th>
-                    </tr>
-                </thead>
-                <tbody id="result"></tbody>
-                <%for(var i=0;i < zhengzhi.length;i++){%>
-                    <tr>
-                        <td>
-                            <%= zhengzhi[i]["subject"]%>
-                        </td>
-                        <td>
-                            <%= zhengzhi[i]["content"]%>
-                        </td>
-                        <th>
-                            <button><a href="/editzhengzhi?zId=<%=zhengzhi[i]["zId"]%>">编辑</a></button>
-                        </th>
-                        <td>
-                                <button>
-                                    <a href="/editzhengzhi?zId=<%=zhengzhi[i]["zId"]%>">删除</a>
-                                </button>
-                        </td>
-                    </tr>
-                <%}%>
-            </table>
-            <!-- <div id="foot">
-                <p style="float: left;" onclick="showAct()">返回上一页</p>
-                <p style="float: right;">确认</p>
-            </div> -->
+            <form class="zhuce" action="/editEnglishAcitve?EId=<%=editEnglishList[0].EId%>" method="POST">
+                <div class="divv" id="divv">
+                    <h3>单词:</h3>
+                    <input type="text" name="word" value=<%=editEnglishList[0].subject%>>
+                </div>
+                <div class="divv" id="divv">
+                    <h3>释义:</h3>
+                    <input type="text" name="content" value=<%=editEnglishList[0].content%>>
+                </div>
+                <div class="divv" id="divv">
+                    <h3>单词ID:</h3>
+                    <input type="text" name="wordId" value=<%=editEnglishList[0].EId%>>
+                </div>
+                <div><button>确认</button></div>
+                
+            </form>
+
         </div>
     </div>
 </body>
 <script>
-    function culling() {
-        window.location = "http://localhost:3000/culling";
-    }
-    function tuijian() {
-        window.location = "http://localhost:3000/tuijian";
-    }
-    function zhengzhi() {
-        window.location = "http://localhost:3000/zhengzhi";
-    }
-    function english() {
-        window.location = "http://localhost:3000/english";
-    }
-    function zhuanyeke() {
-        window.location = "http://localhost:3000/zhuanyeke";
-    }
-    function study() {
-        window.location = "http://localhost:3000/study";
-    }
-    function mine() {
-        window.location = "http://localhost:3000/mine";
-    }
+    
 </script>
 
 </html>

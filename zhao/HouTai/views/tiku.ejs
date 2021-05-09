@@ -202,11 +202,9 @@
                         <td>
                             <%= tiku[i]["content"]%>
                         </td>
-                        <td>
-                        <button>
-                            <!-- <a href="/editB?signId=<%=tiku[i]["signId"]%>"> -->
-                            编辑
-                        </button></td>
+                        <th>
+                            <button><a href="/edittiku?tid=<%=tiku[i]["tid"]%>">编辑</a></button>
+                        </th>
                         <td>
                             <button>
                                 <a href="/delT?tid=<%=tiku[i]["tid"]%>">删除</a>

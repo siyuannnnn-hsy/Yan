@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的界面</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>document</title>
     <style type="text/css">
         .left{
             height:705px;
             width:300px;
             background-color: #bebebe;
+            float: left;
         }
         .logo img{
             height:100px;
@@ -98,6 +99,15 @@
         table tr:nth-child(even) {
             background: #F5FAFA;
         }
+        #divv{
+            width:1200px;
+            height: 90px;
+        }
+        #divv input{
+            width:800px;
+            height: 60px;
+            border-radius: 20px;
+        }
     </style>
 </head>
 <body>
@@ -128,64 +138,37 @@
                 历史课程
             </div>
         </div>
-        <table  class="table">
-            <thead>
-                <tr>
-                    <!-- <th>活动ID</th> -->
-                    <th>用户ID</th>
-                    <th>用户名</th>
-                    <th>登录密码</th>
-                    <th>手机号</th>
-                    <th>用户座右铭</th>
-                    <th>专业</th>
-                    <!-- <th></th> -->
-                    <th id="action">编辑</th>
-                    <!-- <th></th> -->
-                    <th id="action">删除</th>
-                </tr>
-            </thead>
+        </div>
+        <div class="right">
+            <form class="zhuce" action="/editMineAcitve?wordId=<%=editMineList[0].wordId%>" method="POST">
+                <div class="divv" id="divv">
+                    <h3>名称:</h3>
+                    <input type="text" name="Sname" value=<%=editMineList[0].name%>>
+                </div>
+                <div class="divv" id="divv">
+                    <h3>用户ID:</h3>
+                    <input type="text" name="subject" value=<%=editMineList[0].userID%>>
+                </div>
+                <div class="divv" id="divv">
+                    <h3>手机号:</h3>
+                    <input type="text" name="content" value=<%=editMineList[0].iphoneNum%>>
+                </div>
+                <div class="divv" id="divv">
+                    <h3>密码:</h3>
+                    <input type="text" name="cId" value=<%=editMineList[0].userPW%>>
+                </div>
+                <div class="divv" id="divv">
+                    <h3>座右铭:</h3>
+                    <input type="text" name="cId" value=<%=editMineList[0].motto%>>
+                </div>
+                <div class="divv" id="divv">
+                    <h3>科目:</h3>
+                    <input type="text" name="cId" value=<%=editMineList[0].subject%>>
+                </div>
+                <div style='margin-top:30px'><button>确认</button></div>
+                
+            </form>
 
-            <tbody id="result"></tbody>
-            <%for(var i=0;i < userlist.length;i++){%>
-                <tr>
-                    <td>
-                        <%= userlist[i]["userID"]%>
-                    </td>
-                    <td>
-                        <%= userlist[i]["name"]%>
-                    </td>
-                    <td>
-                        <%= userlist[i]["userPW"]%>
-                    </td>
-                    <td>
-                        <%= userlist[i]["iphoneNum"]%>
-                    </td>
-                    <td>
-                        <%= userlist[i]["motto"]%>
-                    </td>
-                    <td>
-                        <%= userlist[i]["subject"]%>
-                    </td>
-                    <!-- <th></th> -->
-                    <th>
-                        <button><a href="/editMine?userID=<%=userlist[i]["userID"]%>">编辑</a></button>
-                    </th>
-                    
-                    <!-- <th></th> -->
-                    <td>
-                        <button>
-                            <a href="/delusers?userID=<%=userlist[i]["userID"]%>">删除</a>
-                        </a>
-                        </button>
-                    </td>
-                </tr>
-            <%}%>
-            
-
-        </table>
-        <div id="foot">
-            <p style="float: left;" onclick="showAct()">返回上一页</p>
-            <p style="float: right;">确认</p>
         </div>
     </div>
 </body>
@@ -212,5 +195,6 @@
         window.location = "http://localhost:3000/cengjing";
     }
 </script>
+
 
 </html>

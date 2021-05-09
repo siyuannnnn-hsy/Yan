@@ -181,6 +181,7 @@
         <div class="right">
             <p>关于推荐的表格</p>
             <div class="table0">
+                
                 <input type="text" class="serch">
                 <button class="serch0">
                     查询
@@ -206,11 +207,9 @@
                         <td>
                             <%= tuijian[i]["content"]%>
                         </td>
-                        <td>
-                        <button>
-                            <!-- <a href="/editB?signId=<%=tuijian[i]["signId"]%>"> -->
-                            编辑
-                        </button></td>
+                        <th>
+                            <button><a href="/edittuijian?TId=<%=tuijian[i]["TId"]%>">编辑</a></button>
+                        </th>
                         <td>
                             <button>
                                 <a href="/deltuijian?TId=<%=tuijian[i]["TId"]%>">删除</a>
