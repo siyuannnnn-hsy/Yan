@@ -30,7 +30,7 @@ CREATE TABLE `culling` (
 
 /*Data for the table `culling` */
 
-insert  into `culling`(`Sname`,`subject`,`content`,`cId`) values ('真题回忆','政治','https://download.kaoyan.com/download-1077388p1','1'),('政治后期复习','政治','肖肖秀荣的形势与政策，肖四肖八，徐涛的背诵小黄书','2'),('英语书籍','英语','红宝书、恋练有词、考研真相、黄皮书、真题超精解、考研英语高分写作、王江涛的考研英语高分写作字帖','3'),('2018考研政治真题解析','政治','https://download.kaoyan.com/download-1075176p1','4'),('真题回忆1','政治1','https://download.kaoyan.com/download-1077388p1','5');
+insert  into `culling`(`Sname`,`subject`,`content`,`cId`) values ('真题回忆','政治','https://download.kaoyan.com/download-1077388p1','1'),('政治后期复习','政治','肖肖秀荣的形势与政策，肖四肖八，徐涛的背诵小黄书','2'),('英语书籍','英语','红宝书、恋练有词、考研真相、黄皮书、真题超精解、考研英语高分写作、王江涛的考研英语高分写作字帖','3'),('2018考研政治真题解析','政治','https://download.kaoyan.com/download-1075176p1','4');
 
 /*Table structure for table `danci` */
 
@@ -201,7 +201,7 @@ CREATE TABLE `tuijian` (
 
 /*Data for the table `tuijian` */
 
-insert  into `tuijian`(`Tname`,`content`,`subject`,`TId`) values ('英语书籍','红宝书、恋练有词、考研真相、黄皮书、真题超精解、考研英语高分写作、王江涛的考研英语高分写作字帖','英语','1'),('考研政治','肖秀荣《1000题》、肖秀荣《知识点精讲精练》、肖秀荣《命题冲刺8套卷》、肖秀荣《命题终极预测4套卷》、徐涛20题','政治','2'),('考研数学','李永乐、王式安考研数学复习全书、张宇36讲、张宇1000题、张宇真题大全讲、合工大五套卷、高数18讲','数学','3'),('考研专业课','专业课复习并没有太多的方法论，就是一个很简单的事，书读百遍，其义自见。','专业课','4');
+insert  into `tuijian`(`Tname`,`content`,`subject`,`TId`) values ('考研政治','肖秀荣《1000题》、肖秀荣《知识点精讲精练》、肖秀荣《命题冲刺8套卷》、肖秀荣《命题终极预测4套卷》、徐涛20题','政治','2'),('考研数学','李永乐、王式安考研数学复习全书、张宇36讲、张宇1000题、张宇真题大全讲、合工大五套卷、高数18讲','数学','3'),('考研专业课','专业课复习并没有太多的方法论，就是一个很简单的事，书读百遍，其义自见。','专业课','4');
 
 /*Table structure for table `userlist` */
 
@@ -219,7 +219,7 @@ CREATE TABLE `userlist` (
 
 /*Data for the table `userlist` */
 
-insert  into `userlist`(`name`,`userID`,`iphoneNum`,`userPW`,`motto`,`subject`) values ('小赵','001','15224853695','111111','没啥可说的','软件工程'),('小黄','002','25486325951','111111','你好，加油','计算机');
+insert  into `userlist`(`name`,`userID`,`iphoneNum`,`userPW`,`motto`,`subject`) values ('小小','003','111111','111111','33','计算机'),('小赵','002','15236548256','111111','22','计算机'),('小黄','001','15224589632','111111','11','计算机');
 
 /*Table structure for table `zhengzhi` */
 
